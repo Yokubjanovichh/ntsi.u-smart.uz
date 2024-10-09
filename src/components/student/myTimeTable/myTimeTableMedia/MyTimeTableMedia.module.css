@@ -1,0 +1,196 @@
+.container {
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 100px;
+}
+
+.week {
+  padding: 8px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #fff;
+  border-radius: 8px;
+}
+
+.week span {
+  width: 100%;
+  padding: 5px;
+  font-family: var(--inter);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  text-align: center;
+  color: #000000;
+}
+
+.days {
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #fff;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.days div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.days div span {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--inter);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  color: #000000;
+}
+
+.days div.active {
+  background: #23ae00;
+}
+
+.days div.haveLesson {
+  background: rgba(35, 174, 0, 0.2);
+}
+
+.days div.active span {
+  color: #fff;
+}
+
+/* lessons start */
+.lessons {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.lessons > h1 {
+  font-family: var(--inter);
+  font-size: calc(36 / 7.68 * 1vw);
+  font-weight: 700;
+  line-height: calc(46 / 7.68 * 1vw);
+  text-align: left;
+  color: #000000;
+}
+
+.lessonsContainer {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.lesson {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.time {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.15px;
+  text-align: left;
+  color: #000000;
+}
+
+.subject {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.15px;
+  text-align: left;
+  color: #000000;
+}
+
+.teacher {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  color: #000000;
+}
+
+.room {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  color: #00000033;
+}
+
+.noLesson {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.noLesson h1 {
+  font-family: var(--inter);
+  font-size: calc(36 / 7.68 * 1vw);
+  font-weight: 700;
+  line-height: calc(46 / 7.68 * 1vw);
+  text-align: center;
+  color: #00000033;
+}
+
+/* lessons end */
+
+@media screen and (max-width: 576px) {
+  .week span {
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+
+  .days div {
+    border-radius: 8px;
+  }
+
+  .days div span {
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .week span {
+    font-size: 3.33vw;
+    line-height: 4.7vw;
+  }
+
+  .days div {
+    border-radius: 8px;
+  }
+
+  .days div span {
+    font-size: 3.33vw;
+    line-height: 4.7vw;
+  }
+}

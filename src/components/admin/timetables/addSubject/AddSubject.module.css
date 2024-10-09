@@ -1,0 +1,138 @@
+.addSubjectWrapper {
+  width: 100%;
+  height: 100%;
+  padding: calc(30 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(69 / 14.4 * 1vw);
+  position: relative;
+}
+
+.addSubjectSearch {
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.addSubjectSearch > button {
+  padding: calc(25 / 14.4 * 1vw) calc(44 / 14.4 * 1vw);
+  font-family: "Inter", sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(18 / 14.4 * 1vw);
+  border-radius: calc(10 / 14.4 * 1vw);
+  background-color: #01a228;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.addSubjectSearch > button:hover,
+.addSubjectSearch > button:active {
+  transform: scale(0.98);
+}
+
+.subjects {
+  margin-top: 20px;
+  width: 60%;
+  padding: 0;
+  list-style-type: none;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: start;
+  color: #333;
+}
+
+.subject {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.subject:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subject span {
+  font-size: 16px;
+  color: #333;
+}
+
+.subject button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subject button:hover {
+  background-color: #c0392b;
+}
+
+.subject button:focus {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .subject {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+
+  .subject button {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+.addSubjectBtns {
+  position: absolute;
+  bottom: calc(18 / 14.4 * 1vw);
+  right: calc(18 / 14.4 * 1vw);
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.addSubjectBtns > button {
+  padding: calc(14 / 14.4 * 1vw) calc(32 / 14.4 * 1vw);
+  border: none;
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #0000001a;
+  color: red;
+  font-family: "Inter", sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(24 / 14.4 * 1vw);
+  transition: transform 0.3s ease;
+}
+
+.addSubjectBtns > button:hover {
+  transform: scale(0.98);
+}
+
+.addSubjectBtns > button:active {
+  transform: scale(1.05);
+}
+
+.addSubjectBtns > button:last-child {
+  background-color: #01a228;
+  color: white;
+}

@@ -1,0 +1,288 @@
+.footerWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(33 / 14.4 * 1vw);
+  padding-bottom: calc(30 / 14.4 * 1vw);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(20 / 14.4 * 1vw);
+}
+
+.footerLogo > img {
+  width: calc(228 / 14.4 * 1vw);
+  height: calc(58 / 14.4 * 1vw);
+}
+
+.phoneNumbers {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(13 / 14.4 * 1vw);
+}
+
+.footerLogoPhone {
+  display: flex;
+  column-gap: calc(14 / 14.4 * 1vw);
+  align-items: center;
+}
+
+.footerLogoPhone > img {
+  width: calc(24 / 14.4 * 1vw);
+  height: calc(24 / 14.4 * 1vw);
+}
+
+.footerLogoPhone > a {
+  font-family: Inter, sans-serif;
+  font-size: calc(28 / 14.4 * 1vw);
+  font-weight: 700;
+  line-height: calc(34 / 14.4 * 1vw);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.footerLogoPhone > a:hover {
+  opacity: 0.5;
+}
+
+/* socialAndLocation */
+
+.social {
+  display: flex;
+  flex-direction: row;
+  column-gap: calc(5 / 14.4 * 1vw);
+  align-items: center;
+}
+
+.social > a {
+  width: calc(30 / 14.4 * 1vw);
+  height: calc(30 / 14.4 * 1vw);
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: calc(8 / 14.4 * 1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+.social > a:hover {
+  transform: scale(0.9);
+}
+
+.social > a:active {
+  transform: scale(1.1);
+}
+
+.social > a > img {
+  width: 60%;
+  height: 60%;
+}
+
+/* location */
+
+.location {
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+  margin-top: calc(32 / 14.4 * 1vw);
+  margin-bottom: calc(22 / 14.4 * 1vw);
+}
+
+.locationIcon {
+  width: calc(30 / 14.4 * 1vw);
+  height: calc(52 / 14.4 * 1vw);
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: calc(8 / 14.4 * 1vw);
+}
+
+.locationIcon > img {
+  width: calc(11 / 14.4 * 1vw);
+  width: calc(14 / 14.4 * 1vw);
+}
+
+.location > p {
+  width: calc(129 / 14.4 * 1vw);
+  font-family: Inter;
+  font-size: calc(11 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(15 / 14.4 * 1vw);
+  color: #ffffff;
+}
+
+.social > a:hover > img {
+  filter: brightness(0) invert(1);
+}
+
+/* maps */
+
+.maps {
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.maps > button {
+  border: none;
+  outline: none;
+  background: none;
+  width: calc(96 / 14.4 * 1vw);
+  height: calc(34 / 14.4 * 1vw);
+  border-radius: calc(8 / 14.4 * 1vw);
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.maps > button > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+.maps > button:hover {
+  transform: scale(0.99);
+}
+
+.maps > button:active {
+  transform: scale(1.01);
+}
+
+/* brouserMap */
+
+.brouserMap {
+  width: calc(697 / 14.4 * 1vw);
+  height: calc(241 / 14.4 * 1vw);
+  border: none;
+}
+
+.footerWrapper > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(15 / 14.4 * 1vw);
+  color: #ffffff80;
+}
+
+/* media section */
+
+@media only screen and (max-width: 430px) {
+  .footerWrapper {
+    margin-top: calc(27 / 4.3 * 1vw);
+    flex-direction: column;
+    padding-top: calc(39 / 4.3 * 1vw) !important;
+    padding-bottom: calc(20 / 4.3 * 1vw) !important;
+    background-color: #000;
+  }
+
+  .footer {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerLogo {
+    row-gap: calc(24 / 4.3 * 1vw);
+  }
+
+  .footerLogo > img {
+    width: calc(200 / 4.3 * 1vw);
+    height: calc(50 / 4.3 * 1vw);
+  }
+
+  .phoneNumbers {
+    width: 100%;
+    row-gap: calc(13 / 4.3 * 1vw);
+  }
+
+  .footerLogoPhone {
+    column-gap: calc(14 / 4.3 * 1vw);
+  }
+
+  .footerLogoPhone > img {
+    width: calc(24 / 4.3 * 1vw);
+    height: calc(24 / 4.3 * 1vw);
+  }
+
+  .footerLogoPhone > a {
+    font-size: calc(28 / 4.3 * 1vw);
+    font-weight: 500;
+    line-height: calc(34 / 4.3 * 1vw);
+  }
+
+  .social {
+    width: 100%;
+    column-gap: calc(5 / 4.3 * 1vw);
+    margin-top: calc(23 / 4.3 * 1vw);
+    margin-bottom: calc(16 / 4.3 * 1vw);
+  }
+
+  .social > a {
+    width: calc(30 / 4.3 * 1vw);
+    height: calc(30 / 4.3 * 1vw);
+    border-radius: calc(8 / 4.3 * 1vw);
+  }
+  .location {
+    column-gap: calc(10 / 4.3 * 1vw);
+    margin-top: calc(16 / 4.3 * 1vw);
+    margin-bottom: calc(16 / 4.3 * 1vw);
+  }
+  .locationIcon {
+    width: calc(30 / 4.3 * 1vw);
+    height: calc(52 / 4.3 * 1vw);
+    border-radius: calc(8 / 4.3 * 1vw);
+  }
+
+  .locationIcon > img {
+    width: calc(11 / 4.3 * 1vw);
+    width: calc(14 / 4.3 * 1vw);
+  }
+
+  .location > p {
+    width: calc(129 / 4.3 * 1vw);
+    font-size: calc(11 / 4.3 * 1vw);
+    font-weight: 300;
+    line-height: calc(15 / 4.3 * 1vw);
+  }
+
+  .maps {
+    column-gap: calc(5 / 4.3 * 1vw);
+    margin-bottom: calc(10 / 4.3 * 1vw);
+  }
+
+  .maps > button {
+    width: calc(96 / 4.3 * 1vw);
+    height: calc(34 / 4.3 * 1vw);
+    border-radius: calc(8 / 4.3 * 1vw);
+  }
+
+  .brouserMap {
+    width: 100%;
+    height: calc(148 / 4.3 * 1vw);
+    border-radius: calc(10 / 4.3 * 1vw);
+    margin-bottom: calc(24 / 4.3 * 1vw);
+  }
+
+  .footerWrapper > p {
+    font-size: calc(12 / 4.3 * 1vw);
+    font-weight: 300;
+    line-height: calc(15 / 4.3 * 1vw);
+  }
+}

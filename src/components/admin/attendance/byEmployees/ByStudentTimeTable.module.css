@@ -1,0 +1,274 @@
+.container {
+  margin-top: 17px;
+  width: 100%;
+}
+
+.weekDays {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding-bottom: 12px;
+  z-index: 10;
+}
+
+.weekday {
+  padding: 8px 13px;
+  width: 100%;
+  border-radius: 8px;
+  background: #0000000d;
+}
+
+.weekday > p {
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.week {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+
+.notchoosenday {
+  width: 100%;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #0000000d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.week > .day {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding-bottom: 30px;
+  border-bottom: 10px solid #0000000d;
+  position: relative;
+}
+
+.week .day > span {
+  width: 100%;
+  padding: 9px 13px;
+  position: sticky;
+  top: 40px;
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 16px;
+  text-align: left;
+  background: #fff;
+  color: #00000080;
+  text-transform: capitalize;
+  z-index: 2;
+}
+
+.workhours {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.workhour {
+  width: 100%;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #0000000d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.workhour .edit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.workhour .edit > .icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.workhour > .came,
+.workhour > .notcame,
+.workhour > .undefined {
+  width: 100%;
+}
+
+.workhour > .undefined {
+  margin-top: 7px;
+  aspect-ratio: 1 / 1;
+  background: #0000000D;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.workhour > .undefined > ul, 
+.workhour > .undefined > p {
+  display: none;
+}
+
+
+.workhour > .came .undefinedIcon,
+.workhour > .notcame .undefinedIcon {
+  display: none;
+}
+
+.workhour > .undefined .undefinedIcon {
+  display: block;
+}
+
+.workhour ul {
+  margin-top: 10px;
+  width: 100%;
+  height: 180px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: scroll;
+}
+
+.workhour ul::-webkit-scrollbar {
+  display: none;
+}
+
+.workhour ul.came {
+  background: red;
+}
+
+.workhour ul > li {
+  padding: 4px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.workhour ul > li > p {
+  width: 100%;
+  padding: 4px 8px;
+  font-family: var(--inter);
+  text-align: left;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.enterTime {
+  color: #FFF;
+  background: #23ae00;
+}
+
+.workhour > .notcame ul > li > .enterTime {
+  color: #ff0000;
+  background: #ff000033;
+}
+
+.exitTime {
+  color: #FFF;
+  background: #ff0000;
+}
+
+.firstEnter,
+.lastExit {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  color: #000000;
+}
+
+.firstEnter span,
+.lastExit span {
+  margin-right: 6px;
+  width: 4px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.firstEnter span {
+  background: #23ae00;
+}
+
+.lastExit span {
+  background: #ff0000;
+}
+
+.result {
+  margin-top: 8px;
+  width: 100%;
+  background: #23ae0090;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.notcameResult {
+  background: #ff0000;
+}
+
+.undefinedResult {
+  background: #00AAFF;
+}
+
+.result .after {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #23ae00;
+}
+
+.notcameResult .after,
+.undefinedResult .after {
+  display: none;
+}
+
+.result p {
+  padding: 3px 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 10px;
+  text-align: left;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.result .icon {
+  font-size: 12px;
+}

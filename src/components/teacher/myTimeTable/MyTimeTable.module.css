@@ -1,0 +1,219 @@
+.container {
+  height: 100%;
+  overflow-y: scroll;
+  padding-bottom: 100px;
+  border-radius: 20px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* search div start */
+.searchdiv {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchdiv > h1 {
+  font-family: var(--inter);
+  font-size: calc(36 / 14.4 * 1vw);
+  font-weight: 700;
+  line-height: calc(43.57 / 14.4 * 1vw);
+  text-align: left;
+  color: #000000;
+}
+
+.searchdiv > form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.searchBtn {
+  padding: 15px 33px;
+  border-radius: 12px;
+  background: #23ae00;
+  transition: all 0.3s ease;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  text-align: left;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background: #01a228;
+}
+
+/* search div end */
+
+/* date input start */
+
+.formGroup {
+  min-width: 250px;
+  position: relative;
+}
+
+.formGroup input {
+  padding: 12px 25px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup input.valid {
+  border: 1px solid #23ae00;
+}
+
+.formGroup > .text {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus ~ .text,
+.formGroup input.valid ~ .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.formGroup input[type="month"]:focus {
+  border: 1px solid #23ae00;
+}
+
+.formGroup input[type="month"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.formGroup > .dateicon {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+/* date input end */
+
+@media screen and (max-width: 1220px) {
+  .searchdiv > h1 {
+    font-size: calc(36 / 12.2 * 1vw);
+    line-height: calc(43.57 / 12.2 * 1vw);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .searchdiv > h1 {
+    font-size: calc(36 / 9.92 * 1vw);
+    line-height: calc(43.57 / 9.92 * 1vw);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .searchdiv {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
+  }
+  .searchdiv > h1 {
+    font-size: calc(30 / 7.68 * 1vw);
+    line-height: calc(34 / 7.68 * 1vw);
+    order: 1;
+  }
+
+  /* date input start */
+
+  .formGroup {
+    min-width: calc(250 / 7.68 * 1vw);
+  }
+
+  .formGroup input {
+    padding: calc(12 / 7.68 * 1vw) calc(25 / 7.68 * 1vw);
+    width: auto;
+  }
+
+  .formGroup > .text {
+    left: calc(15 / 7.68 * 1vw);
+  }
+
+  .formGroup > .dateicon {
+    right: 25px;
+  }
+
+  /* date input end */
+
+  .searchBtn {
+    padding: calc(10 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .searchdiv > h1 {
+    font-size: calc(24 / 5.76 * 1vw);
+    line-height: calc(28 / 5.76 * 1vw);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .searchdiv > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .formGroup input {
+    padding: calc(12 / 4.3 * 1vw) calc(25 / 4.3 * 1vw);
+    width: 100%;
+  }
+  .searchBtn {
+    padding: calc(10 / 4.3 * 1vw) calc(20 / 4.3 * 1vw);
+    text-align: center;
+  }
+
+  .searchdiv > h1 {
+    font-size: calc(24 / 4.3 * 1vw);
+    line-height: calc(28 / 4.3 * 1vw);
+  }
+}

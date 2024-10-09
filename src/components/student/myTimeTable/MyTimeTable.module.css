@@ -1,0 +1,325 @@
+/* timeTableWrapper filter and timeTableDate section style start */
+
+.timeTableWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(20 / 14.4 * 1vw);
+  padding-left: calc(15 / 14.4 * 1vw);
+  overflow-y: scroll;
+}
+
+.timeTableWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.timeTableFilter {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  column-gap: calc(20 / 14.4 * 1vw);
+}
+
+.timeTableFilter > button {
+  padding: 15px 0;
+  padding-left: calc(60 / 14.4 * 1vw);
+  padding-right: calc(60 / 14.4 * 1vw);
+  font-family: Inter;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(23 / 14.4 * 1vw);
+  color: #fff;
+  border-radius: calc(10 / 14.4 * 1vw);
+  border: none;
+  background-color: #01a228;
+  transition: all 0.3s ease;
+}
+
+.timeTableFilter > button:hover {
+  transform: scale(0.98);
+}
+
+.timeTableFilter > button:active {
+  transform: scale(1.02);
+}
+
+.timeTableMonthAndYear {
+  margin-top: 10px;
+  padding-left: calc(20 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(36 / 14.4 * 1vw);
+  font-weight: 700;
+  line-height: calc(46 / 14.4 * 1vw);
+}
+
+/* timeTableWrapper filter section style start */
+
+/* monthLessonPlan section styles start */
+
+.monthLessonPlan {
+  width: 100%;
+  padding-left: calc(20 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.weekDays {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  padding-bottom: 15px;
+  background: #f2f2f2;
+}
+
+.weekday {
+  padding: calc(13 / 14.4 * 1vw) 0 calc(11 / 14.4 * 1vw) calc(20 / 14.4 * 1vw);
+  width: 100%;
+  border-radius: calc(8 / 14.4 * 1vw);
+  background: #ffffff;
+}
+
+.weekDays > p {
+  font-family: var(--inter);
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(18 / 14.4 * 1vw);
+  color: #000000;
+  text-align: left;
+  text-transform: capitalize;
+  color: #000000;
+}
+/* monthLessonPlan section styles end */
+
+/* weeks plan styles start */
+
+.week {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.notchoosenday {
+  width: 100%;
+  height: 100%;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #0000000d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.week > .day {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 30px;
+  border-bottom: 10px solid #0000000d;
+  position: relative;
+}
+
+.week .day > span {
+  width: 100%;
+  padding: 20px 13px;
+  position: sticky;
+  top: 50px;
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 16px;
+  text-align: left;
+  background: #f2f2f2;
+  color: #00000080;
+  text-transform: capitalize;
+  z-index: 2;
+}
+
+.lessons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  /* background: #0000000d; */
+  background: none;
+  box-shadow: 0 0 4px #0000000e;
+}
+
+.nolessons {
+  width: 100%;
+  min-height: 100px;
+  height: 100%;
+  border-radius: 10px;
+  background: #0000000d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nolessons p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00000040;
+  transform: rotate(45deg);
+  text-transform: capitalize;
+}
+
+.weekLessonPlan {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  column-gap: calc(15 / 14.4 * 1vw);
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  justify-content: space-between;
+}
+
+.dayLesson {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  row-gap: calc(10 / 14.4 * 1vw);
+}
+
+.timeTableDate {
+  font-family: Inter, sans-serif;
+  font-size: calc(11 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(14 / 14.4 * 1vw);
+  text-align: start;
+  padding-left: 0;
+}
+
+.timeTableFilter > .formGroup {
+  min-width: 250px;
+  height: 100%;
+  position: relative;
+}
+
+.formGroup input {
+  padding: 12px 25px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup input.valid {
+  border: 1px solid #23ae00;
+}
+
+.formGroup > .text {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus ~ .text,
+.formGroup input.valid ~ .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.formGroup input[type="month"]:focus {
+  border: 1px solid #23ae00;
+}
+
+.formGroup input[type="month"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.formGroup > .dateicon {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .formGroup {
+    min-width: calc(250 / 7.68 * 1vw);
+  }
+
+  .formGroup input {
+    padding: 12px 25px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 18.15px;
+  }
+
+  .timeTableFilter > button {
+    padding: 10px 0;
+    padding-left: calc(30 / 7.68 * 1vw);
+    padding-right: calc(30 / 7.68 * 1vw);
+    font-size: calc(20 / 7.68 * 1vw);
+    line-height: calc(23 / 7.68 * 1vw);
+    border-radius: calc(10 / 7.68 * 1vw);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .timeTableFilter {
+    padding: 20px 10px 0;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .formGroup {
+    min-width: calc(250 / 4.3 * 1vw);
+  }
+
+  .timeTableFilter > button {
+    padding: 10px 0;
+    padding-left: calc(20 / 4.3 * 1vw);
+    padding-right: calc(20 / 4.3 * 1vw);
+    font-size: calc(18 / 4.3 * 1vw);
+    line-height: calc(22 / 4.3 * 1vw);
+    border-radius: calc(10 / 4.3 * 1vw);
+  }
+}

@@ -1,0 +1,188 @@
+.table {
+  width: 100%;
+  gap: 10px;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  width: 100%;
+}
+
+.tbody {
+  height: 100%;
+  padding-bottom: 100px;
+  overflow-y: scroll;
+  display: grid;
+  align-content: flex-start;
+}
+
+.tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.thead .tr,
+.tbody .tr {
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: 1.5fr 0.6fr 1fr 80px 100px 1fr 1fr 0.6fr; */
+  grid-template-columns: 1.5fr 0.6fr 1fr 80px 100px 1fr 0.6fr;
+  align-items: center;
+  gap: 40px;
+  border-radius: 10px;
+}
+
+.thead .tr {
+  background: #d2d2d280;
+}
+
+.tbody .tr {
+  transition: all 0.3s ease;
+}
+
+.tbody .tr:hover {
+  background: #ffffff;
+}
+
+.thead .tr > td > span {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.tbody .tr > td > span,
+.tbody .tr > td > a {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.status button {
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  font-family: var(--inter);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.73px;
+  border-radius: 7px;
+  color: #ffffff;
+}
+
+.status .active {
+  background: #23ae00;
+}
+
+.status .blocked {
+  background: #ff0000;
+}
+
+.status .pending {
+  background: #fce803;
+  color: #000000;
+}
+
+.image div {
+  width: 36px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image div img {
+  width: 100%;
+}
+
+.tbody .action > button {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: #0000001a;
+  font-family: var(--inter);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.73px;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* .update {
+  color: #000000;
+} */
+
+/* .tbody .action > .update:hover {
+  background: #23ae00;
+  color: #ffffff;
+}
+
+.tbody .action > .update:active {
+  background: #23ae0080;
+  color: #ffffff80;
+} */
+
+.delete {
+  color: #ff0000;
+}
+
+.tbody .action > .delete:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.tbody .action > .delete:active {
+  background: #ff000080;
+  color: #ffffff80;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.notIcon {
+  width: 36px;
+  height: 36px;
+  animation-name: xMark;
+  animation-duration: 1s;
+}
+
+.buildingIcon {
+  width: 36px;
+  height: 36px;
+  opacity: 0;
+  animation: checkmark-animation 0.4s ease-in-out forwards;
+}
+
+.iconBuilding .buildingIcon {
+  color: #1e1e1e;
+  font-size: 30px;
+}
+
+@keyframes checkmark-animation {
+  0% {
+    opacity: 0;
+    transform: rotate(-145deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}

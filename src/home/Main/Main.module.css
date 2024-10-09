@@ -1,0 +1,10 @@
+.main {
+  width: 100%;
+  /* margin-top: calc(170 / 14.4 * 1vw); */
+}
+
+@media only screen and (max-width: 430px) {
+  .main {
+    margin-top: calc(32 / 4.3 * 1vw);
+  }
+}

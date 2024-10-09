@@ -1,0 +1,105 @@
+.form {
+  width: 100%;
+  height: calc(100dvh - 180px);
+  position: relative;
+  padding: 10px 15px 0;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form::-webkit-scrollbar {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 14px 50px;
+  border: none;
+  border-radius: 12px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--inter);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons .delete {
+  background: #0000001a;
+  color: #ff0000;
+}
+
+.buttons .delete:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.buttons .delete:active {
+  background: #ff000080;
+  color: #ffffff80;
+}
+
+.buttons .save {
+  background: #01a228;
+  color: #ffffff;
+}
+
+.buttons .save:hover {
+  background: #23ae00;
+  color: #ffffff;
+}
+
+.buttons .save:active {
+  background: #23ae0080;
+  color: #ffffff80;
+}
+
+.formContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.inputs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.formGroup {
+  width: 100%;
+  position: relative;
+}
+
+.formGroup select {
+  padding: 25px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  /* background: #ffffff; */
+  outline: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.formGroup select:focus {
+  border: 1px solid #23ae00;
+}

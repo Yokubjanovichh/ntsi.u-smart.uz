@@ -1,0 +1,82 @@
+.container {
+  height: 100dvh;
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.suggestion {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 40px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #01a228;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #017a20;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px; /* Kichik ekranlar uchun sarlavha o'lchami */
+  }
+
+  .description {
+    font-size: 16px; /* Kichik ekranlar uchun matn o'lchami */
+  }
+
+  .suggestion {
+    font-size: 14px; /* Kichik ekranlar uchun tavsiya matni o'lchami */
+  }
+
+  .button {
+    padding: 8px 16px; /* Kichik ekranlar uchun tugma o'lchami */
+    font-size: 14px; /* Kichik ekranlar uchun tugma matn o'lchami */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px; /* Juda kichik ekranlar uchun sarlavha o'lchami */
+  }
+
+  .description {
+    font-size: 14px; /* Juda kichik ekranlar uchun matn o'lchami */
+  }
+
+  .suggestion {
+    font-size: 12px; /* Juda kichik ekranlar uchun tavsiya matni o'lchami */
+  }
+
+  .button {
+    padding: 6px 12px; /* Juda kichik ekranlar uchun tugma o'lchami */
+    font-size: 12px; /* Juda kichik ekranlar uchun tugma matn o'lchami */
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "monthLessons": {
+    "week1": [
+      {
+        "dayID": 1,
+        "lessonDate": "27 - September",
+        "lessons": [
+          {
+            "slotID": 1,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Hudoyorov",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 2,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Informatika",
+            "teacher": "Murodulla Hudoyorov",
+            "room": "1234a",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 3,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Yuldashev",
+            "room": "1234C",
+            "studentStatus": "undefined"
+          },
+          {
+            "slotID": 4,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Yusupov",
+            "room": "1234I",
+            "studentStatus": "came"
+          }
+        ]
+      },
+      {
+        "dayID": 2,
+        "lessonDate": "28 - September",
+        "lessons": [
+          {
+            "slotID": 5,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Utkir G'iyosob",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          },
+          {
+            "slotID": 6,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Utkir G'iyosob",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 7,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Utkir G'iyosob",
+            "room": "1234B",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 8,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Utkir G'iyosob",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          }
+        ]
+      },
+      {
+        "dayID": 3,
+        "lessonDate": "29 - September",
+        "lessons": [
+          {
+            "slotID": 9,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Jahongit Yusupov",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 10,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Jahongit Yusupov",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 11,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Jahongit Yusupov",
+            "room": "1234B",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 12,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Jahongit Yusupov",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          }
+        ]
+      },
+      {
+        "dayID": 4,
+        "lessonDate": "30 - September",
+        "lessons": [
+          {
+            "slotID": 13,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Diyora Yusupova",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 14,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Diyora Yusupova",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          },
+          {
+            "slotID": 15,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Diyora Yusupova",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 16,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Diyora Yusupova",
+            "room": "1234B",
+            "studentStatus": "not came"
+          }
+        ]
+      },
+      {
+        "dayID": 5,
+        "lessonDate": "31 - September",
+        "lessons": [
+          {
+            "slotID": 17,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Normirzaev Abdukarim",
+            "room": "1234B",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 18,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Normirzaev Abdukarim",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 19,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Normirzaev Abdukarim",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          },
+          {
+            "slotID": 20,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Normirzaev Abdukarim",
+            "room": "1234B",
+            "studentStatus": "came"
+          }
+        ]
+      },
+      {
+        "dayID": 6,
+        "lessonDate": "1 - Oktober",
+        "lessons": [
+          {
+            "slotID": 21,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Murodulla Yuldashev",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 22,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Murodulla Yuldashev",
+            "room": "1234B",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 23,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Murodulla Yuldashev",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          },
+          {
+            "slotID": 24,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Murodulla Yuldashev",
+            "room": "1234B",
+            "studentStatus": "came"
+          }
+        ]
+      },
+      {
+        "dayID": 7,
+        "lessonDate": "2 - Oktober",
+        "lessons": [
+          {
+            "slotID": 25,
+            "lessonTime": "08:30-09:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Hudoyorov",
+            "room": "1234B",
+            "studentStatus": "not came"
+          },
+          {
+            "slotID": 26,
+            "lessonTime": "10:30-12:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Hudoyorov",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 27,
+            "lessonTime": "13:30-15:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Hudoyorov",
+            "room": "1234B",
+            "studentStatus": "came"
+          },
+          {
+            "slotID": 28,
+            "lessonTime": "15:30-18:50",
+            "lessonName": "Huquqiy amaliyot dasturiy ta‘minot",
+            "teacher": "Sanjar Hudoyorov",
+            "room": "1234B",
+            "studentStatus": "undefined"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,275 @@
+.addRoomWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: calc(30 / 14.4 * 1vw);
+  position: relative;
+}
+
+.addRoomInputs {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.addRoomInputs > button {
+  padding-left: calc(30 / 14.4 * 1vw);
+  padding-right: calc(30 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(24 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  border: none;
+  background: #01a228;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* addtimetable buttons */
+
+.addRoomBtns {
+  position: absolute;
+  bottom: calc(18 / 14.4 * 1vw);
+  right: calc(18 / 14.4 * 1vw);
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.addRoomBtns > button {
+  padding: calc(14 / 14.4 * 1vw) calc(32 / 14.4 * 1vw);
+  border: none;
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #0000001a;
+  color: red;
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(24 / 14.4 * 1vw);
+  transition: all 0.3s ease;
+}
+
+.addRoomBtns > button:hover,
+.addRoomInputs > button:hover {
+  transform: scale(0.98);
+}
+
+.addRoomBtns > button:active,
+.addRoomInputs > button:active {
+  transform: scale(1.05);
+}
+
+.addRoomBtns > button:last-child {
+  background-color: #01a228;
+  color: white;
+}
+
+/* cameraIp items */
+
+.cameraIps {
+  width: 100%;
+  max-height: 50vh;
+  margin-top: calc(30 / 14.4 * 1vw);
+  display: flex;
+  gap: calc(10 / 14.4 * 1vw);
+  flex-wrap: wrap;
+  overflow: scroll;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cameraItem {
+  display: flex;
+  padding: calc(15 / 14.4 * 1vw) calc(20 / 14.4 * 1vw);
+  border-radius: calc(10 / 14.4 * 1vw);
+  display: flex;
+  column-gap: calc(10 / 14.4 * 1vw);
+  background: white;
+  color: #7f7f7f;
+  font-family: Inter, sans-serif;
+  font-size: calc(15 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(18 / 14.4 * 1vw);
+  align-items: center;
+}
+
+.cameraIpItem {
+  display: flex;
+  column-gap: calc(5 / 14.4 * 1vw);
+}
+
+.cameraIpItem > button {
+  padding: calc(2 / 14.4 * 1vw) calc(10 / 14.4 * 1vw);
+  border-radius: calc(5 / 14.4 * 1vw);
+  border: none;
+  background: #d9d9d9;
+  color: white;
+}
+
+.cameraIpItem > button:hover {
+  transform: scale(0.98);
+}
+
+.cameraIpItem > button:active {
+  transform: scale(1.05);
+}
+
+.cameraIpItem > button:last-child {
+  background-color: red;
+  color: white;
+}
+
+.error {
+  color: #e74c3c;
+  padding: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--inter);
+}
+
+.loading {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+  margin: 20px auto;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.rooms {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.roomItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roomItem:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roomItem span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.roomItem button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.roomItem button:hover {
+  background-color: #c0392b;
+}
+
+.rooms {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.room {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.room:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room span {
+  font-size: 16px;
+  color: #333;
+}
+
+.room button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.room button:hover {
+  background-color: #c0392b;
+}
+
+.room button:focus {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .roomItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .roomItem button {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .room {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+
+  .room button {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}

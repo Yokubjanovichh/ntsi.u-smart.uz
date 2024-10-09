@@ -1,0 +1,192 @@
+.contact {
+  width: 100%;
+  margin-top: calc(73 / 14.4 * 1vw);
+  margin-bottom: calc(78 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  gap: calc(14 / 14.4 * 1vw);
+}
+
+.contact > h1 {
+  font-family: Nasalization, sans-serif;
+  font-size: calc(48 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(57 / 14.4 * 1vw);
+  color: #ffffff;
+}
+
+.contact > p:nth-child(2) {
+  width: calc(870 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(15 / 14.4 * 1vw);
+  color: #ffffffcc;
+  margin-bottom: calc(14 / 14.4 * 1vw);
+}
+
+.contactForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: calc(14 / 14.4 * 1vw);
+}
+
+.contactForm > input,
+.contactInputPhone,
+.contactForm > textarea {
+  padding-left: calc(20 / 14.4 * 1vw);
+  border-radius: calc(15 / 14.4 * 1vw);
+  border: 1px solid #223327;
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  font-family: Inter, sans-serif;
+  font-size: calc(18 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(22 / 14.4 * 1vw);
+  color: #8c928d;
+  outline: none;
+  padding-right: calc(10 / 14.4 * 1vw);
+}
+
+.contactForm > input::placeholder,
+.contactForm > textarea::placeholder {
+  color: #8c928d;
+}
+
+.contactForm > input[type="text"] {
+  width: calc(275 / 14.4 * 1vw);
+  height: calc(70 / 14.4 * 1vw);
+}
+
+.contactInputPhone {
+  width: calc(375 / 14.4 * 1vw);
+  height: calc(70 / 14.4 * 1vw);
+}
+
+.contactForm > textarea {
+  width: calc(410 / 14.4 * 1vw);
+  height: calc(70 / 14.4 * 1vw);
+  padding-top: calc(23 / 14.4 * 1vw);
+  resize: none;
+}
+
+.contactForm > button {
+  width: calc(238 / 14.4 * 1vw);
+  height: calc(70 / 14.4 * 1vw);
+  border-radius: calc(15 / 14.4 * 1vw);
+  border: none;
+  font-family: Inter, sans-serif;
+  font-size: calc(18 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(22 / 14.4 * 1vw);
+  color: #000000;
+  outline: none;
+  background: #ffffff;
+  transition: all 0.1s ease;
+}
+
+.contactForm > button:hover {
+  transform: scale(0.98);
+}
+
+.contactForm > button:active {
+  transform: scale(1.005);
+}
+
+.contactAcception {
+  width: calc(314 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(13 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  text-align: right;
+  color: #ffffff80;
+  margin-left: auto;
+}
+
+.acceptionHide {
+  display: none;
+}
+
+/* media section */
+
+@media only screen and (max-width: 430px) {
+  .contact {
+    margin-top: calc(20 / 4.3 * 1vw);
+    gap: calc(10 / 4.3 * 1vw);
+  }
+
+  .contact > h1 {
+    font-size: calc(20 / 4.3 * 1vw);
+    line-height: calc(24 / 4.3 * 1vw);
+  }
+
+  .contact > p:nth-child(2) {
+    width: 100%;
+    font-size: calc(10 / 4.3 * 1vw);
+    line-height: calc(12 / 4.3 * 1vw);
+    margin-top: calc(10 / 4.3 * 1vw);
+    margin-bottom: calc(13 / 4.3 * 1vw);
+  }
+
+  .contact {
+    gap: calc(10 / 4.3 * 1vw);
+  }
+
+  .contactForm {
+    gap: calc(10 / 4.3 * 1vw);
+    flex-wrap: wrap;
+  }
+
+  .acceptionShow {
+    display: none;
+  }
+
+  .acceptionHide {
+    display: flex;
+  }
+
+  .contactForm > input,
+  .contactForm > textarea {
+    border-radius: calc(10 / 4.3 * 1vw) !important;
+    font-size: calc(14 / 4.3 * 1vw);
+    line-height: calc(17 / 4.3 * 1vw);
+    font-weight: 300;
+    padding-left: calc(15 / 4.3 * 1vw);
+    padding-right: calc(10 / 4.3 * 1vw);
+  }
+
+  .contactForm > input:nth-child(1) {
+    width: calc(165 / 4.3 * 1vw);
+    height: calc(50 / 4.3 * 1vw);
+  }
+
+  .contactForm > input:nth-child(2) {
+    width: calc(215 / 4.3 * 1vw);
+    height: calc(50 / 4.3 * 1vw);
+  }
+
+  .contactForm > textarea {
+    width: 100%;
+    padding-top: calc(10 / 4.3 * 1vw);
+    height: calc(113 / 4.3 * 1vw);
+    padding-top: calc(12 / 4.3 * 1vw);
+  }
+
+  .contactForm > button {
+    width: calc(118 / 4.3 * 1vw);
+    height: calc(30 / 4.3 * 1vw);
+    font-size: calc(12 / 4.3 * 1vw);
+    line-height: calc(14 / 4.3 * 1vw);
+    border-radius: calc(7 / 4.3 * 1vw);
+  }
+  .contactForm > p {
+    width: 67%;
+    margin-left: 0;
+    font-size: calc(10 / 4.3 * 1vw);
+    line-height: calc(12 / 4.3 * 1vw);
+    text-align: left;
+  }
+}

@@ -1,0 +1,209 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  padding-top: 2.4vw;
+  transition: all 0.1s ease;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smallPadding {
+  padding-top: 1vw;
+}
+
+.navbar > a > img {
+  width: 13vw;
+  height: 4.5vw;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 3.1vw;
+}
+
+.locales {
+  display: flex;
+  align-items: center;
+  column-gap: 2vw;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  column-gap: calc(5 / 14.4 * 1vw);
+}
+
+.select > select {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-size: 1.1vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select > img {
+  width: calc(18 / 14.4 * 1vw);
+  height: calc(12 / 14.4 * 1vw);
+}
+
+.locales > button.user {
+  width: 2.7vw;
+  height: 2.7vw;
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  border: none;
+  outline: none;
+  border-radius: 0.4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+.locales > button.user:hover {
+  transform: scale(1.1);
+}
+
+.locales > button.user:active {
+  transform: scale(0.9);
+}
+
+.locales > button.user > img {
+  width: 1.1vw;
+  height: 1.4vw;
+}
+
+.locales > button.menuBtn {
+  width: 2.7vw;
+  height: 2.7vw;
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  border: none;
+  outline: none;
+  border-radius: 0.4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease;
+  display: none;
+}
+
+.locales > button.menuBtn > .menuIcon {
+  color: #fff;
+}
+
+.navigationHide {
+  display: none;
+}
+
+/* padding: 10vw 0 8.6vw 0; */
+
+@media only screen and (max-width: 430px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5.5vw;
+    padding-top: 10vw;
+    margin-bottom: calc(50 / 4.3 * 1vw);
+    position: sticky;
+    top: -calc(20/4.3 * 1vw);
+  }
+
+  .smallPadding {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    row-gap: 3.5vw;
+  }
+
+  .navbarNavigation {
+    display: none;
+  }
+
+  .navigationHide.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 43, 29, 0.8);
+  }
+
+  .navigationHide.active .exitBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 43, 29, 0.8);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  }
+
+  .navigationHide .exitBtn .exitIcon {
+    font-size: 18px;
+    color: red;
+  }
+
+  .navbar > a > img {
+    width: 37.5vw;
+    height: 9.7vw;
+  }
+
+  .select {
+    column-gap: calc(3 / 4.3 * 1vw) !important;
+  }
+
+  .select > select {
+    font-size: 2.7vw;
+    font-weight: 400;
+    line-height: 4.4vw;
+  }
+
+  .select > img {
+    width: calc(5 / 4.3 * 1vw);
+    height: calc(5 / 4.3 * 1vw);
+  }
+
+  .locales > button.user {
+    width: 5.5vw;
+    height: 5.5vw;
+    border-radius: 1.3vw;
+  }
+
+  .locales > button.user > img {
+    width: 2.1vw;
+    height: 4.1vw;
+  }
+
+  .locales > button.menuBtn {
+    display: flex;
+  }
+}

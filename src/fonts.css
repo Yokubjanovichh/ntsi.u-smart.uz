@@ -1,0 +1,9 @@
+/* font-family: Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* font-family: Nasalization */
+@font-face {
+  font-family: Nasalization;
+  src: url(./assets/fonts/nasalization-regular.woff);
+  font-weight: 400;
+}

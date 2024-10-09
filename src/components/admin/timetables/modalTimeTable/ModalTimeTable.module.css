@@ -1,0 +1,80 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  width: calc(1018 / 14.4 * 1vw);
+  height: calc(600 / 14.4 * 1vw);
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-top: calc(16 / 14.4 * 1vw);
+  padding-right: calc(16 / 14.4 * 1vw);
+}
+
+.modalClose:hover {
+  transform: scale(0.9);
+}
+
+.modalClose:active {
+  transform: scale(1.1);
+}
+
+.modalWrapper {
+  width: 100%;
+  padding: calc(50 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: calc(33 / 14.4 * 1vw);
+}
+
+.modalWrapper > h1 {
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(24 / 14.4 * 1vw);
+  color: #000000;
+}
+
+.closeIcon {
+  width: calc(28 / 14.4 * 1vw);
+  height: calc(28 / 14.4 * 1vw);
+}
+
+.modalInputs {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  column-gap: calc(43 / 14.4 * 1vw);
+}
+
+.modalInputTypes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: calc(15 / 14.4 * 1vw);
+}

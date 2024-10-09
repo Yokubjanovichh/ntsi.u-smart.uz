@@ -1,0 +1,228 @@
+.createRole {
+  width: 100%;
+}
+
+.createRole form {
+  padding-top: 15px;
+  width: 100%;
+  height: calc(100dvh - 180px);
+  overflow-y: scroll;
+}
+
+.createRole form::-webkit-scrollbar {
+  display: none;
+}
+
+.formHeader,
+.formContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.formContainer {
+  margin-top: 10px;
+}
+
+/* header start */
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.header > .historyDiv {
+  padding: 0 25px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > div > label {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.header .checkbox {
+  width: 55px;
+  padding: 4px;
+  border-radius: 8px;
+  background: rgba(1, 162, 40, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header .checkbox span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.header [type='checkbox'] {
+  display: none;
+}
+
+.header [type='checkbox']:checked + .checkbox {
+  background: rgba(1, 162, 40, 1);
+  justify-content: flex-end;
+}
+
+.header [type='checkbox']:checked + .checkbox span {
+  background: #ffffff;
+}
+
+.header > .btns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: none;
+}
+
+.header > .btns > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  transition: all 0.3s ease;
+}
+
+.header .btns .update {
+  background: #01a228;
+  color: #ffffff;
+}
+
+.header .btns .update:hover {
+  background: #23ae00;
+  color: #ffffff;
+}
+
+.header .btns .update:active {
+  background: #23ae0080;
+  color: #ffffff80;
+}
+
+.header .btns .delete {
+  background: #ff00001a;
+  color: #ff0000;
+}
+
+.header .btns .delete:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.header .btns .delete:active {
+  background: #ff000080;
+  color: #ffffff80;
+}
+
+/* header end */
+
+.formContent {
+  width: 100%;
+  padding: 15px 26px;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* form buttons */
+
+.formButtons {
+  margin-top: 34px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formButtons button {
+  padding: 14px 50px;
+  border: none;
+  border-radius: 12px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--inter);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formButtons .reset {
+  background: #0000001a;
+  color: #ff0000;
+}
+
+.formButtons .reset:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.formButtons .reset:active {
+  background: #ff000080;
+  color: #ffffff80;
+}
+
+.formButtons .create {
+  background: #01a228;
+  color: #ffffff;
+}
+
+.formButtons .create:hover {
+  background: #23ae00;
+  color: #ffffff;
+}
+
+.formButtons .create:active {
+  background: #23ae0080;
+  color: #ffffff80;
+}
+
+.header > div > input[type='text'],
+.header > div > button {
+  padding: 15px 25px;
+}
+
+.deleteButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff00001a;
+  color: #ff0000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px; /* Adds some space between the dropdown and the button */
+}
+
+.deleteButton:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.deleteButton:active {
+  background-color: #ff000080;
+  color: #ffffff80;
+}

@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  height: 90vh;
+  background: url(../../assets/img/login-background.webp);
+  background-size: 70.6vw 65.7vw;
+  background-position: right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* media section */
+@media only screen and (max-width: 760px) {
+  .header {
+    height: 70vh !important;
+    background: none !important;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .header {
+    height: auto !important;
+    margin: calc(30 / 4.3 * 1vw) 0;
+  }
+}

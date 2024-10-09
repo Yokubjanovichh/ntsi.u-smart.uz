@@ -1,0 +1,36 @@
+.timeTablesLayoutWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(20 / 14.4 * 1vw);
+  overflow: scroll;
+  padding-top: calc(20 / 14.4 * 1vw);
+  position: relative;
+}
+
+.timeTablesLayoutWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.timeTablesLayoutWrapper > nav > ul {
+  display: flex;
+  column-gap: calc(15 / 14.4 * 1vw);
+}
+
+.timeTablesLayoutWrapper > nav > ul > li > a {
+  font-family: Inter, sans-serif;
+  font-size: calc(15 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(18.15 / 14.4 * 1vw);
+  padding: calc(10 / 14.4 * 1vw) calc(30 / 14.4 * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.timeTablesLayoutWrapper > nav > ul > li > a:hover,
+.activeLink {
+  background-color: #d2d2d280;
+  border-radius: calc(10 / 14.4 * 1vw);
+  color: #000 !important;
+}

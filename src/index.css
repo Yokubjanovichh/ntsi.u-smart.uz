@@ -1,0 +1,62 @@
+@font-face {
+  font-family: morganite;
+  src: url("./assets/fonts/morganite_bold.ttf");
+}
+
+:root {
+  --inter: "Inter", sans-serif;
+  --morganite: "morganite", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-left: 6.9vw;
+  padding-right: 6.9vw;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:-webkit-autofill {
+  background-color: red !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* media section */
+@media only screen and (max-width: 430px) {
+  .container {
+    padding-left: 4.6vw;
+    padding-right: 4.6vw;
+  }
+}

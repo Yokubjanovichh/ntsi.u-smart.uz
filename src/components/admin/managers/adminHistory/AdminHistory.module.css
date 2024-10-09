@@ -1,0 +1,171 @@
+.history {
+  width: 100%;
+}
+
+/* header start */
+
+.header {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.header .search {
+  padding: 16px 25px;
+  flex-grow: 1;
+  border: 1px solid #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.header .search:focus {
+  border: 1px solid #23ae00;
+}
+
+.header div {
+  flex-basis: 200px;
+}
+
+.header div input {
+  padding: 15px 17px;
+}
+
+.header div input:focus,
+.header div input.valid {
+  padding: 15px 17px;
+}
+
+.header .searchBtn {
+  padding: 15px 33px;
+  border-radius: 12px;
+  border: none;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  color: #ffffff;
+  background: #23ae00;
+  transition: all 0.3s ease;
+}
+
+.header .searchBtn:hover {
+  background: #238700;
+}
+
+/* header end */
+
+/* container start */
+.container {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  width: 100%;
+}
+
+.tbody {
+  display: block;
+  width: 100%;
+  padding-bottom: 30dvh;
+  height: calc(100dvh - 200px);
+  overflow-y: scroll;
+}
+
+.tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.thead tr,
+.tbody tr {
+  padding: 10px 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2.5fr 1.5fr 1fr;
+  gap: 100px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.thead tr {
+  background: #d2d2d280;
+}
+
+.thead tr td {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.tbody tr {
+  padding: 0px 20px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.tbody tr:hover {
+  background: #ffffff;
+}
+
+.tbody tr td span {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.tbody tr td button {
+  padding: 8px 35px;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  transition: all 0.3s ease;
+}
+
+.tbody tr td .delete {
+  color: #ff0000;
+  background: #ff00001a;
+}
+
+.tbody tr td .delete:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.tbody tr td .delete:active {
+  background: #ff000080;
+  color: #ffffff;
+}
+
+.tbody tr td .create {
+  color: #ffffff;
+  background: #23ae00;
+}
+
+.tbody tr td .create:hover {
+  background: #238700;
+}
+
+.tbody tr td .create:active {
+  background: #23ae00;
+}
+
+/* container end */

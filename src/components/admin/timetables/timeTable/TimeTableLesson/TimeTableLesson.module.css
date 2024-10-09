@@ -1,0 +1,75 @@
+.timeTableWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(7 / 14.4 * 1vw);
+}
+
+.lessonDetails {
+  width: 100%;
+  background-color: white;
+  border-radius: calc(8 / 14.4 * 1vw);
+  padding: calc(11 / 14.4 * 1vw) calc(12 / 14.4 * 1vw) calc(11 / 14.4 * 1vw)
+    calc(13 / 14.4 * 1vw);
+}
+
+.lessonTime {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lessonTime > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 700;
+  line-height: calc(14 / 14.4 * 1vw);
+  color: #000000;
+}
+
+.lessonTime > button {
+  border: none;
+  background: none;
+}
+
+.lessonTime > button > img {
+  width: calc(11 / 14.4 * 1vw);
+  height: calc(11 / 14.4 * 1vw);
+  transition: all 0.3s ease;
+}
+
+.lessonTime > button > img:hover {
+  transform: scale(0.9);
+}
+
+.lessonTime > button > img:active {
+  transform: scale(1.1);
+}
+
+.lessonName {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 700;
+  line-height: calc(12 / 14.4 * 1vw);
+  color: #000000;
+  margin-top: calc(5 / 14.4 * 1vw);
+  margin-bottom: calc(11 / 14.4 * 1vw);
+}
+
+.teacherName {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(13 / 14.4 * 1vw);
+  color: #000000;
+  margin-bottom: calc(9 / 14.4 * 1vw);
+}
+
+.roomNumber {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(13 / 14.4 * 1vw);
+  color: #00000033;
+}

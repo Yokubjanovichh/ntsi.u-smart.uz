@@ -1,0 +1,143 @@
+.modalWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(22 / 14.4 * 1vw);
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: scroll;
+  position: relative;
+}
+
+.modalHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: calc(42 / 14.4 * 1vw);
+}
+
+.modalHeader > img {
+  width: calc(140 / 14.4 * 1vw);
+  height: calc(140 / 14.4 * 1vw);
+  border-radius: 50%;
+}
+
+.studentPersonalInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentFullName {
+  font-family: Inter, sans-serif;
+  font-size: calc(36 / 14.4 * 1vw);
+  font-weight: 800;
+  line-height: calc(44 / 14.4 * 1vw);
+  color: #000000;
+}
+
+.studentFilters {
+  display: flex;
+  column-gap: calc(10 / 14.4 * 1vw);
+  align-items: flex-start;
+}
+
+.attandance {
+  width: calc(101 / 14.4 * 1vw);
+  height: calc(24 / 14.4 * 1vw);
+  background-color: #0000000d;
+  border-radius: calc(7 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(14 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(17 / 14.4 * 1vw);
+  color: #00000033;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: calc(11 / 14.4 * 1vw);
+}
+
+.studentFilters > fieldset {
+  background: none;
+  background: #0000000d;
+  border-radius: 10px;
+  border-color: #f2f2f2;
+  border: none;
+}
+
+.studentFilters > fieldset > input {
+  width: 100%;
+  height: calc(50 / 14.4 * 1vw);
+  background: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 25px;
+  margin-top: -10px;
+}
+
+.studentFilters > fieldset > legend {
+  font-size: 10px;
+}
+
+.studentProgress {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.term {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.term > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(24 / 14.4 * 1vw);
+}
+
+.btns {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  column-gap: calc(5 / 14.4 * 1vw);
+}
+
+.btns > button {
+  padding: calc(9 / 14.4 * 1vw) calc(15 / 14.4 * 1vw);
+  border-radius: calc(8 / 14.4 * 1vw);
+  font-family: Inter, sans-serif;
+  font-size: calc(15 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(18 / 14.4 * 1vw);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btns > button:first-child {
+  color: #ff0000;
+  background: #0000001a;
+}
+
+.btns > button:last-child {
+  color: white;
+  background: #23ae00;
+}
+
+.btns > button:hover {
+  transform: scale(0.98);
+}
+
+.btns > button:active {
+  transform: scale(1.08);
+}

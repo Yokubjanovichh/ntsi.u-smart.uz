@@ -1,0 +1,174 @@
+.addTimeTableWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: calc(15 / 14.4 * 1vw);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: calc(10 / 14.4 * 1vw);
+  padding-left: calc(20 / 14.4 * 1vw);
+}
+
+.addTimeTableLeft,
+.addTimeTableRight {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(25 / 14.4 * 1vw);
+}
+
+.addTimeTableBtns {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* create slots */
+
+.createSlots {
+  background-color: white;
+  border-radius: calc(10 / 14.4 * 1vw);
+  padding: calc(22 / 14.4 * 1vw) calc(15 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(26 / 14.4 * 1vw);
+}
+
+.createSlotsbtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.createSlotsbtn > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(15 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(18 / 14.4 * 1vw);
+}
+
+.createSlotsbtn > div {
+  display: flex;
+  align-items: center;
+  column-gap: calc(5 / 14.4 * 1vw);
+}
+
+.createSlotsbtn > div > button {
+  padding: calc(5 / 14.4 * 1vw) calc(18 / 14.4 * 1vw);
+  border-radius: calc(6 / 14.4 * 1vw);
+  border: none;
+  font-family: Inter, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(15 / 14.4 * 1vw);
+  transition: all 0.3s ease;
+}
+
+.createSlotsbtn > div > button:hover {
+  transform: scale(0.98);
+}
+
+.createSlotsbtn > div > button:active {
+  transform: scale(1.05);
+}
+
+.createSlotsbtn > div > button:first-child {
+  background: #0000001a;
+  color: #00000080;
+}
+
+.createSlotsbtn > div > button:last-child {
+  background: #01a228;
+  color: #fff;
+}
+
+.createSlotsTime {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: calc(60 / 14.4 * 1vw);
+}
+
+.createSlotsStartTime {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: calc(4 / 14.4 * 1vw);
+  color: #00000080;
+}
+
+.createSlotsStartTime > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(12 / 14.4 * 1vw);
+}
+
+.createSlotsStartTime > input {
+  /* width: calc(100 / 14.4 * 1vw); */
+  border: none;
+  font-family: Inter, sans-serif;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(29 / 14.4 * 1vw);
+}
+
+.createSlotsTimeDetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: calc(20 / 14.4 * 1vw);
+  padding-left: 7px;
+}
+
+.createSlotsTimeDetails > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(8 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(10 / 14.4 * 1vw);
+}
+
+/* addtimetable buttons */
+
+.addTimeTableBtns {
+  position: absolute;
+  bottom: calc(18 / 14.4 * 1vw);
+  right: calc(15 / 14.4 * 1vw);
+  display: flex;
+  align-items: center;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.addTimeTableBtns > button {
+  padding: calc(14 / 14.4 * 1vw) calc(32 / 14.4 * 1vw);
+  border: none;
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #0000001a;
+  color: red;
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 500;
+  line-height: calc(24 / 14.4 * 1vw);
+  transition: all 0.3s ease;
+}
+
+.addTimeTableBtns > button:hover {
+  transform: scale(0.98);
+}
+
+.addTimeTableBtns > button:active {
+  transform: scale(1.05);
+}
+
+.addTimeTableBtns > button:last-child {
+  background-color: #01a228;
+  color: white;
+}
+
+.mainTimeTable {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}

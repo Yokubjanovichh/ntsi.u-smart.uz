@@ -1,0 +1,213 @@
+.studentsContainer {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+
+.studentsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.studentsContainer > form {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.studentsContainer > form .byText,
+.studentsContainer > form .group {
+  width: 30%;
+}
+
+.studentsContainer > form > button {
+  padding: 13px 40px;
+  border-radius: 12px;
+  border: none;
+  background: #01a228;
+  font-family: var(--inter);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.studentsContainer > form > button:hover {
+  background: #23ae00;
+  color: #ffffff;
+}
+
+.studentsContainer > form > button:active {
+  background: #23ae0080;
+  color: #ffffff80;
+}
+
+/* students table start */
+
+.studentsTable {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #f2f2f2;
+}
+
+.tbody {
+  height: 100%;
+  padding-bottom: 100px;
+  display: grid;
+  align-content: flex-start;
+}
+
+.thead .tr,
+.tbody .tr {
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.8fr 1.5fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.thead .tr {
+  border-radius: 10px;
+  background: #d2d2d280;
+}
+
+.tbody .tr {
+  border-radius: 10px;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+.tbody .tr:hover {
+  background: #ffffff;
+}
+
+.thead .tr > td > span {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.tbody .tr > td > span,
+.tbody .tr > td > a {
+  font-family: var(--inter);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  color: #000000;
+}
+
+.tbody .tr > td > a {
+  text-decoration: none;
+}
+
+.status button {
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  font-family: var(--inter);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.73px;
+  text-align: center;
+  border-radius: 7px;
+  color: #ffffff;
+}
+
+.status .active {
+  background: #23ae00;
+}
+
+.status .blocked {
+  background: #ff0000;
+}
+
+.status .pending {
+  background: #fce803;
+  color: #000000;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image div {
+  width: 36px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image div img {
+  width: 100%;
+}
+
+.thead .attendance {
+  text-align: center;
+}
+
+.tbody .attendance {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tbody .attendance > .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.active {
+  background: green;
+}
+
+.unactive {
+  background: red;
+}
+
+.undefined {
+  background: #1fb7e7;
+}
+
+.tbody .attendance > .info {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 28px;
+  background: none;
+}
+
+.tbody .attendance > .info:hover {
+  background: #01a22830;
+}
+/* students table end */

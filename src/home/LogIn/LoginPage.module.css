@@ -1,0 +1,485 @@
+.loginPage {
+  width: calc((1000 / 14.4) * 1vw) !important;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc((16 / 14.4) * 1vw);
+}
+
+.loginPage > h1 {
+  font-family: Nasalization, sans-serif;
+  font-size: 4.1vw;
+  font-weight: 400;
+  line-height: 4.5vw;
+  color: #ffffff;
+  text-transform: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc((10 / 14.4) * 1vw);
+}
+
+.note {
+  width: calc((530 / 14.4) * 1vw);
+  padding: calc((22 / 14.4) * 1vw) calc((24 / 14.4) * 1vw);
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: calc((10 / 14.4) * 1vw);
+}
+
+.note > p {
+  font-family: Inter, sans-serif;
+  font-size: calc((20 / 14.4) * 1vw);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: calc((24 / 14.4) * 1vw);
+  color: #ffffff;
+  text-align: start;
+}
+
+.note > a {
+  float: right;
+  font-family: Inter, sans-serif;
+  font-size: calc((12 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((13 / 14.4) * 1vw);
+  color: #ffffff;
+  transition: all 0.1s ease;
+}
+
+.note > a:hover {
+  color: #2d4332;
+}
+
+.login {
+  width: calc(530 / 14.4 * 1vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: calc((10 / 14.4) * 1vw);
+}
+
+.loginInputPhone {
+  border: none;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(24 / 14.4 * 1vw);
+  color: #7e857f;
+}
+
+.loginInputPhone,
+.loginPasswordAndBtn {
+  width: 50%;
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  padding: calc(18 / 14.4 * 1vw) calc(15 / 14.4 * 1vw) calc(18 / 14.4 * 1vw)
+    calc(20 / 14.4 * 1vw);
+  border-radius: calc(10 / 14.4 * 1vw);
+}
+
+.loginPasswordAndBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login > input[type="phone"]::placeholder,
+.loginPasswordAndBtn > input::placeholder {
+  color: #7e857f;
+}
+
+.loginPasswordAndBtn > input,
+.loginPasswordAndBtn > button {
+  font-family: Inter, sans-serif;
+  font-size: calc(20 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(24 / 14.4 * 1vw);
+  color: #7e857f;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.loginPasswordAndBtn > button {
+  transition: all 0.1s ease;
+}
+
+.loginPasswordAndBtn > button > img {
+  width: calc(20 / 14.4 * 1vw);
+  height: calc(20 / 14.4 * 1vw);
+}
+
+.loginPasswordAndBtn > button:hover {
+  transform: scale(1.2);
+}
+
+.loginPasswordAndBtn > button:active {
+  transform: scale(0.9);
+}
+
+.loginPasswordAndBtn > input {
+  width: calc(160 / 14.4 * 1vw);
+}
+
+.loginCheck > label {
+  width: calc(500 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: calc(10 / 14.4 * 1vw);
+}
+
+.loginCheck > label > p {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(15 / 14.4 * 1vw);
+  color: #808781;
+}
+
+/* building checkbox */
+
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: calc(25 / 14.4 * 1vw);
+  margin-bottom: calc(12 / 14.4 * 1vw);
+  cursor: pointer;
+  font-size: calc(22 / 14.4 * 1vw);
+  user-select: none;
+  transition: all 0.1s ease;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(25 / 14.4 * 1vw);
+  width: calc(25 / 14.4 * 1vw);
+  background: rgba(26, 43, 29, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: calc(8 / 14.4 * 1vw);
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #2d4332;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #2d4332;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: calc(9 / 14.4 * 1vw);
+  top: calc(5 / 14.4 * 1vw);
+  width: calc(5 / 14.4 * 1vw);
+  height: calc(10 / 14.4 * 1vw);
+  border: solid white;
+  border-width: 0 calc(3 / 14.4 * 1vw) calc(3 / 14.4 * 1vw) 0;
+  transform: rotate(45deg);
+}
+
+.error {
+  font-family: Inter, sans-serif;
+  font-size: calc(10 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(15 / 14.4 * 1vw);
+  color: red;
+}
+
+/* media section */
+
+@media only screen and (max-width: 760px) {
+  .loginPage {
+    width: 100% !important;
+    row-gap: calc((16 / 7.6) * 1vw);
+  }
+
+  .loginPage > h1 {
+    font-size: 7.76vw;
+    line-height: 8.52vw;
+  }
+
+  .form {
+    row-gap: calc((10 / 7.6) * 1vw);
+  }
+
+  .note {
+    width: calc((530 / 7.6) * 1vw);
+    padding: calc((22 / 7.6) * 1vw) calc((24 / 7.6) * 1vw);
+    background: rgba(26, 43, 29, 0.5);
+    border-radius: calc((10 / 7.6) * 1vw);
+  }
+
+  .note > p {
+    font-size: calc((20 / 7.6) * 1vw);
+    line-height: calc((24 / 7.6) * 1vw);
+  }
+
+  .note > a {
+    font-size: calc((12 / 7.6) * 1vw);
+    line-height: calc((13 / 7.6) * 1vw);
+  }
+
+  .login {
+    width: calc(530 / 7.6 * 1vw);
+    column-gap: calc((10 / 7.6) * 1vw);
+  }
+
+  .loginInputPhone {
+    font-size: calc(20 / 7.6 * 1vw);
+    line-height: calc(24 / 7.6 * 1vw);
+  }
+
+  .loginInputPhone,
+  .loginPasswordAndBtn {
+    width: 50%;
+    background: rgba(26, 43, 29, 0.5);
+    padding: calc(18 / 7.6 * 1vw) calc(15 / 7.6 * 1vw) calc(18 / 7.6 * 1vw)
+      calc(20 / 7.6 * 1vw);
+    border-radius: calc(10 / 7.6 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input,
+  .loginPasswordAndBtn > button {
+    font-size: calc(20 / 7.6 * 1vw);
+    line-height: calc(24 / 7.6 * 1vw);
+  }
+
+  .loginPasswordAndBtn > button > img {
+    width: calc(20 / 7.6 * 1vw);
+    height: calc(20 / 7.6 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input {
+    width: calc(160 / 7.6 * 1vw);
+  }
+
+  .loginCheck > label {
+    width: calc(500 / 7.6 * 1vw);
+    column-gap: calc(10 / 7.6 * 1vw);
+  }
+
+  .loginCheck > label > p {
+    font-size: calc(10 / 7.6 * 1vw);
+    line-height: calc(15 / 7.6 * 1vw);
+  }
+
+  /* building checkbox */
+
+  .checkboxContainer {
+    padding-left: calc(25 / 7.6 * 1vw);
+    margin-bottom: calc(12 / 7.6 * 1vw);
+    font-size: calc(22 / 7.6 * 1vw);
+  }
+
+  .checkmark {
+    height: calc(25 / 7.6 * 1vw);
+    width: calc(25 / 7.6 * 1vw);
+    background: rgba(26, 43, 29, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: calc(8 / 7.6 * 1vw);
+  }
+
+  .checkboxContainer .checkmark:after {
+    left: calc(9 / 7.6 * 1vw);
+    top: calc(5 / 7.6 * 1vw);
+    width: calc(5 / 7.6 * 1vw);
+    height: calc(10 / 7.6 * 1vw);
+    border-width: 0 calc(3 / 7.6 * 1vw) calc(3 / 7.6 * 1vw) 0;
+  }
+
+  .error {
+    font-size: calc(10 / 7.6 * 1vw);
+    line-height: calc(15 / 7.6 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .loginPage {
+    width: 100%;
+    row-gap: calc((16 / 5.76) * 1vw);
+  }
+
+  .loginPage > h1 {
+    font-size: 7.76vw;
+    line-height: 8.52vw;
+  }
+
+  .form {
+    row-gap: calc((10 / 5.76) * 1vw);
+  }
+
+  .note {
+    width: 100%;
+    padding: calc((22 / 5.76) * 1vw) calc((24 / 5.76) * 1vw);
+    border-radius: calc((10 / 5.76) * 1vw);
+  }
+
+  .note > p {
+    font-size: calc((20 / 5.76) * 1vw);
+    line-height: calc((24 / 5.76) * 1vw);
+  }
+
+  .note > a {
+    font-size: calc((12 / 5.76) * 1vw);
+    line-height: calc((13 / 5.76) * 1vw);
+  }
+
+  .login {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: calc(10 / 5.76 * 1vw);
+  }
+
+  .loginInputPhone {
+    font-size: calc(20 / 5.76 * 1vw);
+    line-height: calc(24 / 5.76 * 1vw);
+  }
+
+  .loginInputPhone,
+  .loginPasswordAndBtn {
+    width: 60%;
+    background: rgba(26, 43, 29, 0.5);
+    padding: calc(18 / 5.76 * 1vw) calc(15 / 5.76 * 1vw) calc(18 / 5.76 * 1vw)
+      calc(20 / 5.76 * 1vw);
+    border-radius: calc(10 / 5.76 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input,
+  .loginPasswordAndBtn > button {
+    font-size: calc(20 / 5.76 * 1vw);
+    line-height: calc(24 / 5.76 * 1vw);
+  }
+
+  .loginPasswordAndBtn > button > img {
+    width: calc(20 / 5.76 * 1vw);
+    height: calc(20 / 5.76 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input {
+    width: calc(160 / 5.76 * 1vw);
+  }
+
+  .loginCheck > label {
+    width: 100%;
+    column-gap: calc(10 / 5.76 * 1vw);
+  }
+
+  .loginCheck > label > p {
+    font-size: calc(10 / 5.76 * 1vw);
+    line-height: calc(15 / 5.76 * 1vw);
+  }
+  .error {
+    font-size: calc(10 / 5.76 * 1vw);
+    line-height: calc(15 / 5.76 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .loginPage {
+    width: 100%;
+    row-gap: calc((16 / 4.3) * 1vw);
+  }
+
+  .loginPage > h1 {
+    font-size: 7.76vw;
+    line-height: 8.52vw;
+  }
+
+  .form {
+    row-gap: calc((10 / 4.3) * 1vw);
+  }
+
+  .note {
+    width: 100%;
+    backdrop-filter: blur(2px);
+    padding: calc((22 / 4.3) * 1vw) calc((24 / 4.3) * 1vw);
+    border-radius: calc((10 / 4.3) * 1vw);
+  }
+
+  .note > p {
+    font-size: calc((20 / 4.3) * 1vw);
+    line-height: calc((24 / 4.3) * 1vw);
+  }
+
+  .note > a {
+    font-size: calc((12 / 4.3) * 1vw);
+    line-height: calc((13 / 4.3) * 1vw);
+  }
+
+  .login {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 0;
+    column-gap: 0;
+  }
+
+  .loginInputPhone {
+    font-size: calc(20 / 4.3 * 1vw);
+    line-height: calc(24 / 4.3 * 1vw);
+    margin-bottom: calc(10 / 4.3 * 1vw);
+  }
+
+  .loginInputPhone,
+  .loginPasswordAndBtn {
+    width: 80%;
+    background: rgba(26, 43, 29, 0.5);
+    backdrop-filter: blur(2px);
+    padding: calc(18 / 4.3 * 1vw) calc(15 / 4.3 * 1vw) calc(18 / 4.3 * 1vw)
+      calc(20 / 4.3 * 1vw);
+    border-radius: calc(10 / 4.3 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input,
+  .loginPasswordAndBtn > button {
+    font-size: calc(20 / 4.3 * 1vw);
+    line-height: calc(24 / 4.3 * 1vw);
+  }
+
+  .loginPasswordAndBtn > button > img {
+    width: calc(20 / 4.3 * 1vw);
+    height: calc(20 / 4.3 * 1vw);
+  }
+
+  .loginPasswordAndBtn > input {
+    width: calc(160 / 4.3 * 1vw);
+  }
+
+  .loginCheck > label {
+    width: 100%;
+    column-gap: calc(10 / 4.3 * 1vw);
+  }
+
+  .loginCheck > label > p {
+    font-size: calc(10 / 4.3 * 1vw);
+    line-height: calc(15 / 4.3 * 1vw);
+  }
+
+  .error {
+    font-size: calc(10 / 4.3 * 1vw);
+    line-height: calc(15 / 4.3 * 1vw);
+  }
+}

@@ -1,0 +1,885 @@
+.formGroup {
+  width: 100%;
+  position: relative;
+}
+
+.formGroup input {
+  padding: calc((25 / 14.4) * 1vw);
+  width: 100%;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus {
+  border: 1px solid #23ae00;
+}
+
+.formGroup > .text {
+  position: absolute;
+  top: 50%;
+  left: calc((25 / 14.4) * 1vw);
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus ~ .text,
+.formGroup input.valid ~ .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: calc((12 / 14.4) * 1vw);
+}
+
+/* form group error */
+.textInputError {
+  font-size: 10px;
+  position: absolute;
+  color: red;
+}
+
+/* select option start */
+
+.formGroup button {
+  width: 100%;
+  padding: calc((25 / 14.4) * 1vw);
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.formGroup button.active .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: calc((12 / 14.4) * 1vw);
+  transform: translateY(-50%);
+}
+
+.formGroup button > span {
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup button > .icon {
+  font-size: calc((20 / 14.4) * 1vw);
+  font-weight: 900;
+}
+
+.formGroup ul {
+  max-height: 50vh;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0%, 100% 0%, 0% 0%);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  overflow: scroll;
+}
+
+.formGroup ul.active {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.formGroup ul li {
+  padding: calc((10 / 14.4) * 1vw) calc((25 / 14.4) * 1vw);
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formGroup ul li span {
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+}
+
+.formGroup ul li button {
+  width: auto;
+  padding: 0;
+  border: none;
+  color: red;
+  background: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.formGroup ul li button:hover {
+  opacity: 1;
+}
+
+.formGroup ul li:not(:last-child) {
+  cursor: pointer;
+}
+
+.formGroup ul li:hover {
+  background: #d2d2d280;
+}
+
+/* select option end */
+
+/* date input start */
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.formGroup > .dateicon {
+  position: absolute;
+  top: 50%;
+  right: calc((25 / 14.4) * 1vw);
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus ~ .dateicon,
+.formGroup input.valid ~ .dateicon {
+  position: absolute;
+  top: 50%;
+  right: calc((25 / 14.4) * 1vw);
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+/* date input end */
+
+/* checkbox inputs groups */
+
+.checkboxInputsGroup {
+  width: 100%;
+}
+
+.checkboxInputsGroup h3 {
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 600;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+}
+.checkboxGoup {
+  margin-top: calc((15 / 14.4) * 1vw);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc((25 / 14.4) * 1vw);
+}
+
+.myProfile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .icon {
+  padding: 5px;
+  width: calc((20 / 14.4) * 1vw);
+  height: calc((20 / 14.4) * 1vw);
+  border-radius: 5px;
+  border: 1px solid #00000033;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.checkbox input:checked + .icon {
+  background: #01a228;
+}
+
+.checkbox .text {
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+  user-select: none;
+}
+
+/* checkbox inputs groups end */
+
+/* search input groups start */
+
+.searchInputDiv {
+  width: 100%;
+  position: relative;
+}
+
+.searchInputDiv input {
+  padding: calc((25 / 14.4) * 1vw);
+  width: 100%;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.searchInputDiv input:focus {
+  border-color: #23ae00;
+}
+
+.searchInputDiv > .text {
+  position: absolute;
+  top: 50%;
+  left: calc((25 / 14.4) * 1vw);
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.searchInputDiv input:focus ~ .text,
+.searchInputDiv input.valid ~ .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: calc((12 / 14.4) * 1vw);
+}
+
+.searchInputDiv > .roomList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.searchInputDiv > .roomList > li {
+  padding: calc((10 / 14.4) * 1vw) calc((25 / 14.4) * 1vw);
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #000000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.searchInputDiv > .roomList > li:hover {
+  background: #d2d2d280;
+}
+
+/* search input groups end */
+
+/* select option with search */
+
+.formGroup button.active .text {
+  position: absolute;
+  top: 0%;
+  background: #23ae00;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: calc((12 / 14.4) * 1vw);
+  transform: translateY(-50%);
+}
+
+.formGroup button > span {
+  pointer-events: none;
+  font-family: var(--inter);
+  font-size: calc((15 / 14.4) * 1vw);
+  font-weight: 400;
+  line-height: calc((18.15 / 14.4) * 1vw);
+  color: #00000080;
+  transition: all 0.3s ease;
+}
+
+.formGroup button > .icon {
+  font-size: calc((20 / 14.4) * 1vw);
+  font-weight: 900;
+}
+
+.formGroup .search-box {
+  width: 100%;
+  padding: calc((10 / 14.4) * 1vw);
+  margin-top: calc((10 / 14.4) * 1vw);
+  border: 1px solid #d2d2d2;
+  border-radius: calc((10 / 14.4) * 1vw);
+  font-size: calc((15 / 14.4) * 1vw);
+  outline: none;
+}
+
+.formGroupSearch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formGroupWrapper > ul {
+  width: 100%;
+}
+
+/* media 992px start */
+
+@media screen and (max-width: 992px) {
+  .formGroup input {
+    padding: calc((25 / 9.92) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  .formGroup > .text {
+    left: calc((25 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  .formGroup input:focus ~ .text,
+  .formGroup input.valid ~ .text {
+    font-size: calc((12 / 9.92) * 1vw);
+  }
+
+  /* select option start */
+
+  .formGroup button {
+    padding: calc((25 / 9.92) * 1vw);
+    border-radius: 10px;
+  }
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 9.92) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 9.92) * 1vw);
+  }
+
+  .formGroup ul {
+    max-height: 50vh;
+    gap: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .formGroup ul.active {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .formGroup ul li {
+    padding: calc((10 / 9.92) * 1vw) calc((25 / 9.92) * 1vw);
+  }
+
+  .formGroup ul li span {
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  /* select option end */
+
+  /* date input start */
+
+  .formGroup > .dateicon {
+    right: calc((25 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  .formGroup input:focus ~ .dateicon,
+  .formGroup input.valid ~ .dateicon {
+    right: calc((25 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+  /* date input end */
+
+  /* checkbox inputs groups */
+
+  .checkboxInputsGroup h3 {
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+  .checkboxGoup {
+    margin-top: calc((15 / 9.92) * 1vw);
+    gap: calc((25 / 9.92) * 1vw);
+  }
+
+  .myProfile {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .checkbox .icon {
+    padding: 5px;
+    width: calc((20 / 9.92) * 1vw);
+    height: calc((20 / 9.92) * 1vw);
+  }
+
+  .checkbox .text {
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  /* checkbox inputs groups end */
+
+  /* search input groups start */
+
+  .searchInputDiv input {
+    padding: calc((25 / 9.92) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+
+  .searchInputDiv > .text {
+    left: calc((25 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+   
+  }
+
+  .searchInputDiv input:focus ~ .text,
+  .searchInputDiv input.valid ~ .text {
+    font-size: calc((12 / 9.92) * 1vw);
+  }
+
+  .searchInputDiv > .roomList > li {
+    padding: calc((10 / 9.92) * 1vw) calc((25 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+
+  /* search input groups end */
+
+  /* select option with search */
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 9.92) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 9.92) * 1vw);
+    line-height: calc((18.15 / 9.92) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 9.92) * 1vw);
+  }
+
+  .formGroup .search-box {
+    padding: calc((10 / 9.92) * 1vw);
+    margin-top: calc((10 / 9.92) * 1vw);
+    border-radius: calc((10 / 9.92) * 1vw);
+    font-size: calc((15 / 9.92) * 1vw);
+  }
+}
+
+
+/* media 992px end */
+
+
+/* media 768px start */
+
+@media screen and (max-width: 768px) {
+  .formGroup input {
+    padding: calc((25 / 7.68) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  .formGroup > .text {
+    left: calc((25 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  .formGroup input:focus ~ .text,
+  .formGroup input.valid ~ .text {
+    font-size: calc((12 / 7.68) * 1vw);
+  }
+
+  /* select option start */
+
+  .formGroup button {
+    padding: calc((25 / 7.68) * 1vw);
+    border-radius: 10px;
+  }
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 7.68) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 7.68) * 1vw);
+  }
+
+  .formGroup ul {
+    max-height: 50vh;
+    gap: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .formGroup ul.active {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .formGroup ul li {
+    padding: calc((10 / 7.68) * 1vw) calc((25 / 7.68) * 1vw);
+  }
+
+  .formGroup ul li span {
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  /* select option end */
+
+  /* date input start */
+
+  .formGroup > .dateicon {
+    right: calc((25 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  .formGroup input:focus ~ .dateicon,
+  .formGroup input.valid ~ .dateicon {
+    right: calc((25 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+  /* date input end */
+
+  /* checkbox inputs groups */
+
+  .checkboxInputsGroup h3 {
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+  .checkboxGoup {
+    margin-top: calc((15 / 7.68) * 1vw);
+    gap: calc((25 / 7.68) * 1vw);
+  }
+
+  .myProfile {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .checkbox .icon {
+    padding: 5px;
+    width: calc((20 / 7.68) * 1vw);
+    height: calc((20 / 7.68) * 1vw);
+  }
+
+  .checkbox .text {
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  /* checkbox inputs groups end */
+
+  /* search input groups start */
+
+  .searchInputDiv input {
+    padding: calc((25 / 7.68) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+
+  .searchInputDiv > .text {
+    left: calc((25 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+   
+  }
+
+  .searchInputDiv input:focus ~ .text,
+  .searchInputDiv input.valid ~ .text {
+    font-size: calc((12 / 7.68) * 1vw);
+  }
+
+  .searchInputDiv > .roomList > li {
+    padding: calc((10 / 7.68) * 1vw) calc((25 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+
+  /* search input groups end */
+
+  /* select option with search */
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 7.68) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 7.68) * 1vw);
+    line-height: calc((18.15 / 7.68) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 7.68) * 1vw);
+  }
+
+  .formGroup .search-box {
+    padding: calc((10 / 7.68) * 1vw);
+    margin-top: calc((10 / 7.68) * 1vw);
+    border-radius: calc((10 / 7.68) * 1vw);
+    font-size: calc((15 / 7.68) * 1vw);
+  }
+}
+
+/* media 768px end */
+
+
+
+/* media 576px start */
+
+@media screen and (max-width: 576px) {
+  .formGroup input {
+    padding: calc((25 / 5.76) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  .formGroup > .text {
+    left: calc((25 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  .formGroup input:focus ~ .text,
+  .formGroup input.valid ~ .text {
+    font-size: calc((12 / 5.76) * 1vw);
+  }
+
+  /* select option start */
+
+  .formGroup button {
+    padding: calc((25 / 5.76) * 1vw);
+    border-radius: 10px;
+  }
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 5.76) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 5.76) * 1vw);
+  }
+
+  .formGroup ul {
+    max-height: 50vh;
+    gap: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .formGroup ul.active {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .formGroup ul li {
+    padding: calc((10 / 5.76) * 1vw) calc((25 / 5.76) * 1vw);
+  }
+
+  .formGroup ul li span {
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  /* select option end */
+
+  /* date input start */
+
+  .formGroup > .dateicon {
+    right: calc((25 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  .formGroup input:focus ~ .dateicon,
+  .formGroup input.valid ~ .dateicon {
+    right: calc((25 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+  /* date input end */
+
+  /* checkbox inputs groups */
+
+  .checkboxInputsGroup h3 {
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+  .checkboxGoup {
+    margin-top: calc((15 / 5.76) * 1vw);
+    gap: calc((25 / 5.76) * 1vw);
+  }
+
+  .myProfile {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .checkbox .icon {
+    padding: 5px;
+    width: calc((20 / 5.76) * 1vw);
+    height: calc((20 / 5.76) * 1vw);
+  }
+
+  .checkbox .text {
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  /* checkbox inputs groups end */
+
+  /* search input groups start */
+
+  .searchInputDiv input {
+    padding: calc((25 / 5.76) * 1vw);
+    border-radius: 10px;
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+
+  .searchInputDiv > .text {
+    left: calc((25 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+   
+  }
+
+  .searchInputDiv input:focus ~ .text,
+  .searchInputDiv input.valid ~ .text {
+    font-size: calc((12 / 5.76) * 1vw);
+  }
+
+  .searchInputDiv > .roomList > li {
+    padding: calc((10 / 5.76) * 1vw) calc((25 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+
+  /* search input groups end */
+
+  /* select option with search */
+
+  .formGroup button.active .text {
+    font-size: calc((12 / 5.76) * 1vw);
+  }
+
+  .formGroup button > span {
+    font-size: calc((15 / 5.76) * 1vw);
+    line-height: calc((18.15 / 5.76) * 1vw);
+  }
+
+  .formGroup button > .icon {
+    font-size: calc((20 / 5.76) * 1vw);
+  }
+
+  .formGroup .search-box {
+    padding: calc((10 / 5.76) * 1vw);
+    margin-top: calc((10 / 5.76) * 1vw);
+    border-radius: calc((10 / 5.76) * 1vw);
+    font-size: calc((15 / 5.76) * 1vw);
+  }
+}
+
+/* media 576px end */

@@ -1,0 +1,97 @@
+.container {
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.error {
+  color: #e74c3c;
+  padding: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--inter);
+}
+
+.loading {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+  margin: 20px auto;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.cameras {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.camera {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.camera:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.camera span {
+  font-size: 16px;
+  color: #333;
+}
+
+.camera button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.camera button:hover {
+  background-color: #c0392b;
+}
+
+.camera button:focus {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .camera {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+
+  .camera button {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}

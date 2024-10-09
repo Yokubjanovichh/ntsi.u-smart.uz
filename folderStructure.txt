@@ -1,0 +1,218 @@
+smart-u_front/
+├── public/
+│ |── redirects
+├── src/
+│ ├── api/
+│ │
+│ ├── assets/
+│ │ └── images/
+│ │ └── logo.png
+│ ├── components/
+│ │ ├── admin/
+│ │ | └── managers/
+│ │ |   └── managersList/
+│ │ |     ├── ManagersList.jsx
+│ │ |     └── ManagersList.module.css
+│ │ |   └── addManager/
+│ │ |     ├── AddManager.jsx
+│ │ |     └── AddManager.module.css
+│ │ |   └── createRole/
+│ │ |     ├── CreateRole.jsx
+│ │ |     └── CreateRole.module.css
+│ │ |   └── adminHistory/
+│ │ |     ├── adminHistory.jsx
+│ │ |     └── AdminHistory.module.css
+
+│ │ | └── teachers/
+│ │ |   └── teachersList/
+│ │ |     ├── TeachersList.jsx
+│ │ |     └── TeachersList.module.css
+│ │ |   └── addTeacher/
+│ │ |     ├── AddTeacher.jsx
+│ │ |     └── AddTeacher.module.css
+│ │ | └── students/
+│ │ |   └── studentsList/
+│ │ |     ├── StudentsList.jsx
+│ │ |     └── StudentsList.module.css
+│ │ |   └── addStudent/
+│ │ |     ├── AddStudent.jsx
+│ │ |     └── AddStudent.module.css
+│ │ | └── groups/
+│ │ |   └── groupsList/
+│ │ |     ├── GroupsList.jsx
+│ │ |     └── GroupsList.module.css
+│ │ |   └── addGroup/
+│ │ |     ├── AddGroup.jsx
+│ │ |     └── AddGroup.module.css
+│ │ |   └── groupModal/
+│ │ |     ├── GroupModal.jsx
+│ │ |     └── GroupModal.module.css
+
+│ │ | └── departments/
+│ │ |   └── departmentsList/
+│ │ |     ├── DepartmentsList.jsx
+│ │ |     └── DepartmentsList.module.css
+│ │ |   └── addDepartment/
+│ │ |     ├── AddDepartment.jsx
+│ │ |     └── AddDepartment.module.css
+│ │ |   └── departmentModal/
+│ │ |     ├── DepartmentModal.jsx
+│ │ |     └── DepartmentModal.module.css
+│ │ | └── timetables/
+│ │ |   └── timeTable/
+│ │ |     ├── TimeTable.jsx
+│ │ |     └── TimeTable.module.css
+│ │ |   └── addTimeTable/
+│ │ |     ├── AddTimeTable.jsx
+│ │ |     └── AddTimeTable.module.css
+│ │ |   └── addSubject/
+│ │ |     ├── AddSubject.jsx
+│ │ |     └── AddSubject.module.css
+│ │ |   └── addRoom/
+│ │ |     ├── AddRoom.jsx
+│ │ |     └── AddRoom.module.css
+│ │ |   └── modalTimeTable/
+│ │ |     ├── ModalTimeTable.jsx
+│ │ |     └── ModalTimeTable.module.css
+
+│ │ | └── attendance/
+│ │ |   └── byStudents/
+│ │ |     ├── ByStudents.jsx
+│ │ |     ├── ByStudents.module.css
+│ │ |     ├── ByStudentModal.jsx
+│ │ |     └── ByStudentModal.module.css
+│ │ |   └── byEmployees/
+│ │ |     ├── ByEmployees.jsx
+│ │ |     ├── ByEmployees.module.css
+│ │ |     ├── ByEmployeeModal.jsx
+│ │ |     └── ByEmployeeModal.module.css
+│ │ |   └── statisticsByStudents/
+│ │ |     ├── StatisticsByStudents.jsx
+│ │ |     ├── StatisticsByStudents.module.css
+│ │ |     ├── StatisticsByStudentModal.jsx
+│ │ |     └── StatisticsByStudentModal.module.css
+│ │ |   └── statisticsByEmployees/
+│ │ |     ├── StatisticsByEmployees.jsx
+│ │ |     ├── StatisticsByEmployees.module.css
+│ │ |     ├── StatisticsByEmployeeModal.jsx
+│ │ |     └── StatisticsByEmployeeModal.module.css
+
+│ │ ├── teacher/
+│ │ | └── lessons/
+│ │ |     ├── Lessons.jsx
+│ │ |     └── Lessons.module.css
+│ │ | └── students/
+│ │ |     ├── Students.jsx
+│ │ |     └── Students.module.css
+│ │ | └── myTimeTable/
+│ │ |     ├── MyTimeTable.jsx
+│ │ |     └── MyTimeTable.module.css
+│ │ | └── eachStudentModal/
+│ │ |     ├── EachStudentModal.jsx
+│ │ |     └── EachStudentModal.module.css
+│ │ ├── student/
+│ │ | └── myTimeTable/
+│ │ |     ├── MyTimeTable.jsx
+│ │ |     └── MyTimeTable.module.css
+
+│ │ ├── psychologist/
+│ │ | └── students/
+│ │ |     └── allStudents/
+│ │ |       ├── AllStudents.jsx
+│ │ |       ├── AllStudents.module.css
+│ │ |       ├── AllStudentsModal.jsx
+│ │ |       └── AllStudentsModal.module.css
+│ │ |     └── byTeacher/
+│ │ |       ├── ByTeacher.jsx
+│ │ |       ├── ByTeacher.module.css
+│ │ |       ├── ByTeacherModal.jsx
+│ │ |       └── ByTeacherModal.module.css
+│ │ |     └── dangerZone/
+│ │ |       ├── DangerZone.jsx
+│ │ |       ├── DangerZone.module.css
+│ │ |       ├── DangerZoneModal.jsx
+│ │ |       └── DangerZoneModal.module.css
+│ │ | └── employees/
+│ │ |     └── allEmployees/
+│ │ |       ├── AllEmployees.jsx
+│ │ |       ├── AllEmployees.module.css
+│ │ |       ├── AllEmployeesModal.jsx
+│ │ |       └── AllEmployeesModal.module.css
+│ │ |     └── dangerZone/
+│ │ |       ├── DangerZone.jsx
+│ │ |       ├── DangerZone.module.css
+│ │ |       ├── DangerZoneModal.jsx
+│ │ |       └── DangerZoneModal.module.css
+
+│ │ ├── myprofile/
+│ │ | ├── MyProfile.jsx
+│ │ | └── MyProfile.module.css
+│ │ ├── sideBar/
+│ │ | ├── sideBar.jsx
+│ │ | └── sideBar.module.css
+│ │ ├── dashboardHeader/
+│ │ | ├── dashboardHeader.jsx
+│ │ | └── dashboardHeader.module.css
+
+│ │ ├── home/
+│ │ | ├── Header.jsx
+│ │ | ├── Header.module.css
+│ │ | ├── Main.jsx
+│ │ | ├── Main.module.css
+│ │ │ ├── LoginPage.jsx
+│ │ │ ├── LoginPage.module.css
+│ │ | ├── About.jsx
+│ │ | ├── About.module.css
+│ │ | ├── HowItWorks.jsx
+│ │ | ├── HowItWorks.module.css
+│ │ | ├── Contact.jsx
+│ │ | ├── Contact.module.css
+│ │ | ├── Footer.jsx
+│ │ | └── Footer.module.css
+
+│ ├── locales/
+│ │ ├── uz.json
+│ │ ├── eng.json
+│ │ └── ru.json
+│ ├── pages/
+│ │ ├── HomePage.jsx
+│ │ ├── Dashboard.jsx
+│ │ ├── NotFoundPage.jsx
+│ │ └── HomePage.module.css
+
+│ ├── redux/
+│ │ ├── slices/
+|     |-- auth/
+|     |   |-- authSlice.js
+|     |   |-- authApi.js
+|     |-- language/
+|     |   |-- languageSlice.js
+|     |-- managers/
+|     |   |-- managersSlice.js
+|     |   |-- managersApi.js
+|     |-- teachers/
+|     |   |-- teachersSlice.js
+|     |   |-- teachersApi.js
+|     |-- students/
+|     |   |-- studentsSlice.js
+|     |   |-- studentsApi.js
+
+│ │ └── store.js
+│ ├── routes/
+| | ├── index.jsx
+| | ├── config.jsx
+| | ├── dashboard.jsx
+| | └── ProtectedRoute.jsx
+│ ├── utils/
+│ │ └── helpers.js
+│ ├── App.js
+│ ├── App.css
+│ ├── main.jsx
+│ └── index.css
+├── .eslintrc.cjs
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
