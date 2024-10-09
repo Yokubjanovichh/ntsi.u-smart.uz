@@ -40,7 +40,7 @@ npm run dev
 
 👤 **Murodulla Yuldashev**
 
-- GitHub: [@githubhandle](https://github.com/jahongiry)
+- GitHub: [@githubhandle](https://github.com/Yokubjanovichh)
 - Twitter: [@twitterhandle](https://twitter.com/jahongir13)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jahngir-yusupov/)
 
