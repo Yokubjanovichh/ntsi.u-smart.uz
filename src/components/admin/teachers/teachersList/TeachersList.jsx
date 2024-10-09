@@ -273,7 +273,7 @@ const TeachersList = () => {
                 );
                 const minutes = totalMinutes % 60;
                 const hours = Math.floor(totalMinutes / 60);
-                if (totalMinutes > 10) {
+                if (totalMinutes > 1) {
                   formattedTime = `${hours
                     .toString()
                     .padStart(2, "0")}:${minutes
