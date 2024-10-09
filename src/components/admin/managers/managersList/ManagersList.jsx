@@ -7,7 +7,10 @@ import {
 import { MAINURL } from "../../../../redux/api/axios";
 import ConfirmationDialog from "../../../common/ConfirmationDialog";
 import { fetchRooms } from "../../../../redux/slices/timetable/timetablesSlice";
-import { fetchTodayManagersLastDetections } from "../../../../redux/slices/detections/detectionsSlice";
+import {
+  fetchTodayManagersLastDetections,
+  fetchManagersLastDetections,
+} from "../../../../redux/slices/detections/detectionsSlice";
 import { connectWebSocket } from "../../../../redux/websocket";
 import { enqueueSnackbar as EnSn } from "notistack";
 import notIcon from "../../../../../src/assets/svg/not.svg";
@@ -33,8 +36,8 @@ const ManagersList = () => {
   const [submitAttempted, setSubmitAttempted] = useState(false);
   const translations = useSelector((state) => state.language.translations);
   const [animatedRoomNames, setAnimatedRoomNames] = useState({});
-
   const cameraToRoomMapRef = useRef(new Map());
+  const now = new Date();
 
   useEffect(() => {
     dispatch(fetchManagers());
@@ -44,6 +47,10 @@ const ManagersList = () => {
   useEffect(() => {
     dispatch(fetchTodayManagersLastDetections());
   }, []);
+
+  // useEffect(() => {
+  //   dispatch(fetchManagersLastDetections());
+  // }, []);
 
   useEffect(() => {
     const map = new Map();
@@ -121,7 +128,12 @@ const ManagersList = () => {
       });
 
       ws.on("detect", (data) => {
-        console.log(data);
+        const detectionIndex = detections.findIndex(
+          (detection) => detection.user === data.user
+        );
+
+        detections[detectionIndex].time = new Date();
+
         setDetectedUsers((prev) => new Set(prev.add(data.user)));
 
         setUserToCameraMap((prevMap) => {
@@ -236,9 +248,9 @@ const ManagersList = () => {
             <td className={styles.status}>
               <span>{translations.adminLocation}</span>
             </td>
-            {/* <td className={styles.status}>
+            <td className={styles.status}>
               <span>{translations.status}</span>
-            </td> */}
+            </td>
             <td className={styles.action}>
               <span>{translations.adminAction}</span>
             </td>
@@ -254,6 +266,30 @@ const ManagersList = () => {
                 translations.adminUnkownRoom;
 
               const isDetected = detectedUsers.has(manager.id);
+
+              const detection = detections.find(
+                (detection) => detection.user === manager.id
+              );
+              const detectionInterval = detection
+                ? now - new Date(detection.time)
+                : null;
+              let formattedTime = "Not detected";
+              if (detectionInterval !== null) {
+                const totalMinutes = Math.floor(
+                  detectionInterval / (1000 * 60)
+                );
+                const minutes = totalMinutes % 60;
+                const hours = Math.floor(totalMinutes / 60);
+                if (totalMinutes > 1) {
+                  formattedTime = `${hours
+                    .toString()
+                    .padStart(2, "0")}:${minutes
+                    .toString()
+                    .padStart(2, "0")} oldin`;
+                } else {
+                  formattedTime = "online";
+                }
+              }
 
               return (
                 <tr className={styles.tr} key={index}>
@@ -304,9 +340,15 @@ const ManagersList = () => {
                   <td className={styles.role}>
                     <span>{animatedRoomNames["room1"] || roomName}</span>
                   </td>
-                  {/* <td className={styles.role}>
-                    <span>status</span>
-                  </td> */}
+                  <td className={styles.role}>
+                    <span
+                      style={{
+                        color: `${formattedTime === "online" ? "blue" : ""}`,
+                      }}
+                    >
+                      {formattedTime}
+                    </span>
+                  </td>
                   <td className={styles.action}>
                     <button
                       className={styles.delete}

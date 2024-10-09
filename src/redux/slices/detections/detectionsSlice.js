@@ -9,6 +9,25 @@ const initialState = {
   status: null,
   error: null,
 };
+
+export const fetchManagersLastDetections = createAsyncThunk(
+  "detections/fetchManagersLastDetections",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get("/manager/detections/managers/last/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || "Failed to fetch detections"
+      );
+    }
+  }
+);
+
 export const fetchTeachersLastDetections = createAsyncThunk(
   "detections/fetchTeachersLastDetections",
   async (_, { rejectWithValue }) => {
@@ -26,6 +45,7 @@ export const fetchTeachersLastDetections = createAsyncThunk(
     }
   }
 );
+
 export const fetchStudentsLastDetections = createAsyncThunk(
   "detections/fetchStudentsLastDetections",
   async (_, { rejectWithValue }) => {
@@ -130,6 +150,17 @@ const detectionsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchManagersLastDetections.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchManagersLastDetections.fulfilled, (state, action) => {
+        state.detections = action.payload;
+        state.status = "succeeded";
+      })
+      .addCase(fetchManagersLastDetections.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
       .addCase(fetchTeachersLastDetections.pending, (state) => {
         state.status = "loading";
       })
