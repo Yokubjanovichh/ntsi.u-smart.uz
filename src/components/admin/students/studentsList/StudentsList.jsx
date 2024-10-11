@@ -25,6 +25,7 @@ const StudentsList = () => {
     status: detectStatus,
     error: detectError,
   } = useSelector((state) => state.detections);
+  const [detectionsState, setDetectionsState] = useState([]);
   const { rooms } = useSelector((state) => state.timetable);
   const [selectedStudentId, setSelectedStudentId] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
