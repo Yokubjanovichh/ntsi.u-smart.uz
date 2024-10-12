@@ -156,15 +156,16 @@ const AddStudent = () => {
       dispatch,
     ]
   );
-
   useEffect(() => {
     if (submitAttempted) {
       if (status === "succeeded") {
-        EnSn(translations.studentCreated, { variant: "success" });
+        EnSn(translations?.studentCreated || "Student successfully created", {
+          variant: "success",
+        });
         handleReset();
         setSubmitAttempted(false);
       } else if (status === "failed") {
-        EnSn(error, { variant: "error" });
+        EnSn(error || "Something went wrong", { variant: "error" });
         setSubmitAttempted(false);
       }
     }

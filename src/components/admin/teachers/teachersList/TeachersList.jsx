@@ -1,5 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { enqueueSnackbar as EnSn } from "notistack";
+
+import { MAINURL } from "../../../../redux/api/axios";
+import { connectWebSocket } from "../../../../redux/websocket";
 import {
   fetchTeachers,
   deleteTeacher,
@@ -8,176 +12,120 @@ import {
   fetchTeachersLastDetections,
   fetchTodayTeachersLastDetections,
 } from "../../../../redux/slices/detections/detectionsSlice";
-import { MAINURL } from "../../../../redux/api/axios";
+import { fetchCameras } from "../../../../redux/slices/cameras/camerasSlice";
+
 import ConfirmationDialog from "../../../common/ConfirmationDialog";
-import { connectWebSocket } from "../../../../redux/websocket";
-import { fetchRooms } from "../../../../redux/slices/timetable/timetablesSlice";
-import { enqueueSnackbar as EnSn } from "notistack";
+
 import notIcon from "../../../../../src/assets/svg/not.svg";
 import buildingIcon from "../../../../../src/assets/svg/building.svg";
+
 import styles from "./TeachersList.module.css";
 
 const TeachersList = () => {
   const dispatch = useDispatch();
-  const { teachers, status, error } = useSelector((state) => state.teachers);
+  const translations = useSelector((state) => state.language.translations);
+
+  const useTeachersData = () => {
+    const dispatch = useDispatch();
+    const teachers = useSelector((state) => state.teachers.teachers);
+    const status = useSelector((state) => state.teachers.status);
+    const error = useSelector((state) => state.teachers.error);
+
+    useEffect(() => {
+      dispatch(fetchTeachers());
+    }, [dispatch]);
+
+    return { teachers, status, error };
+  };
+  const useCamerasData = () => {
+    const dispatch = useDispatch();
+    const cameras = useSelector((state) => state.cameras.cameras);
+    const status = useSelector((state) => state.cameras.status);
+    const error = useSelector((state) => state.cameras.error);
+
+    useEffect(() => {
+      dispatch(fetchCameras());
+    }, [dispatch]);
+
+    return { cameras, status, error };
+  };
+  const useDetectionsData = () => {
+    const dispatch = useDispatch();
+    const detections = useSelector((state) => state.detections.detections);
+    const status = useSelector((state) => state.detections.status);
+    const error = useSelector((state) => state.detections.error);
+
+    useEffect(() => {
+      dispatch(fetchTodayTeachersLastDetections());
+    }, [dispatch]);
+
+    return { detections, status, error };
+  };
+
+  const {
+    teachers,
+    status: teachersStatus,
+    error: teachersError,
+  } = useTeachersData();
+  const {
+    cameras,
+    status: camerasStatus,
+    error: camerasError,
+  } = useCamerasData();
   const {
     detections,
     status: detectStatus,
     error: detectError,
-  } = useSelector((state) => state.detections);
-  const { rooms } = useSelector((state) => state.timetable);
+  } = useDetectionsData();
+
+  const [camerasMap, setCamerasMap] = useState(new Map());
+  const [detectedUsers, setDetectedUsers] = useState(new Map());
   const [selectedTeacherId, setSelectedTeacherId] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [submitAttempted, setSubmitAttempted] = useState(false);
-  const [detectedTeachers, setDetectedTeachers] = useState(new Set());
-  const [cameraToRoomMap, setCameraToRoomMap] = useState(new Map());
-  const [teacherToCameraMap, setTeacherToCameraMap] = useState({});
-  const [animatedRoomNames, setAnimatedRoomNames] = useState({});
-  const cameraToRoomMapRef = useRef(new Map());
-  const now = new Date();
-
-  const translations = useSelector((state) => state.language.translations);
 
   useEffect(() => {
-    dispatch(fetchTeachers());
-    dispatch(fetchRooms());
-  }, [dispatch]);
-
-  // useEffect(() => {
-  //   dispatch(fetchTeachersLastDetections());
-  // }, []);
-
-  useEffect(() => {
-    dispatch(fetchTodayTeachersLastDetections());
-  }, []);
-
-  useEffect(() => {
-    const map = new Map();
-    rooms.forEach((room) => {
-      room.cameras.forEach((camera) => {
-        if (camera.id && room.name) {
-          map.set(camera.id, room.name);
-        }
-      });
-    });
-    cameraToRoomMapRef.current = map;
-  }, [rooms]);
-
-  useEffect(() => {
-    if (detections && detections.length > 0) {
-      detections.forEach((data) => {
-        setDetectedTeachers((prev) => new Set(prev.add(data.user)));
-
-        setTeacherToCameraMap((prevMap) => {
-          const prevCameraId = prevMap[data.user];
-          const newCameraId = data.camera;
-
-          if (!prevCameraId || prevCameraId !== newCameraId) {
-            animateRoomName(data.user, newCameraId);
-          }
-
-          return { ...prevMap, [data.user]: newCameraId };
-        });
-      });
-    }
-  }, [detections]);
+    const newCamerasMap = new Map(
+      cameras.map((camera) => [camera.id, camera.room.name])
+    );
+    setCamerasMap(newCamerasMap);
+  }, [cameras]);
 
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (token) {
-      const ws = connectWebSocket(token);
+    if (detections && detections.length > 0) {
+      detections.forEach((data) => {
+        const updatedDetectedUsers = new Map(detectedUsers);
+        updatedDetectedUsers.set(data.user, {
+          room: camerasMap.get(data.camera),
+          time: new Date(),
+        });
+        setDetectedUsers(updatedDetectedUsers);
+      });
+    }
+  }, [detections]);
 
-      ws.on("connect", () => {
+  useEffect(() => {
+    if (token) {
+      const io = connectWebSocket(token);
+      io.on("connect", () => {
         console.log("WebSocket connected");
       });
-
-      ws.on("detect", (data) => {
-        const detectionIndex = detections.findIndex(
-          (detection) => detection.user === data.user
-        );
-
-        detections[detectionIndex].time = new Date();
-
-        setDetectedTeachers((prev) => new Set(prev.add(data.user)));
-
-        setTeacherToCameraMap((prevMap) => {
-          const prevCameraId = prevMap[data.user];
-          const newCameraId = data.camera;
-
-          if (!prevCameraId || prevCameraId !== newCameraId) {
-            animateRoomName(data.user, newCameraId);
-          }
-
-          return { ...prevMap, [data.user]: newCameraId };
+      io.on("detect", (data) => {
+        const updatedDetectedUsers = new Map(detectedUsers);
+        updatedDetectedUsers.set(data.user, {
+          room: camerasMap.get(data.camera),
+          time: new Date(),
         });
+        setDetectedUsers(updatedDetectedUsers);
       });
 
       return () => {
-        ws.disconnect();
+        io.disconnect();
       };
     }
-  }, [token]);
-
-  const animateRoomName = (userId, cameraId) => {
-    const cameraToRoomMap = cameraToRoomMapRef.current;
-
-    if (!cameraToRoomMap || !cameraToRoomMap.has(cameraId)) {
-      console.warn("cameraToRoomMap is undefined or cameraId not found");
-      return;
-    }
-
-    const roomName =
-      cameraToRoomMap.get(cameraId) || translations.adminUnkownRoom;
-
-    const codeletters = "&#*+%?£@§$";
-    let currentLength = 0;
-    let revealLength = 0;
-
-    const animateRandomText = () => {
-      if (currentLength < roomName.length) {
-        currentLength += 2;
-        if (currentLength > roomName.length) {
-          currentLength = roomName.length;
-        }
-
-        const randomText = generateRandomString(currentLength);
-        setAnimatedRoomNames((prev) => ({ ...prev, [userId]: randomText }));
-        setTimeout(animateRandomText, 100);
-      } else {
-        revealRoomName();
-      }
-    };
-
-    const revealRoomName = () => {
-      if (revealLength < roomName.length) {
-        revealLength += 1;
-        const partialText = roomName.substring(0, revealLength);
-        const remainingRandomText = generateRandomString(
-          roomName.length - revealLength
-        );
-        setAnimatedRoomNames((prev) => ({
-          ...prev,
-          [userId]: partialText + remainingRandomText,
-        }));
-        setTimeout(revealRoomName, 40);
-      } else {
-        setAnimatedRoomNames((prev) => ({ ...prev, [userId]: roomName }));
-      }
-    };
-
-    const generateRandomString = (length) => {
-      let randomText = "";
-      for (let i = 0; i < length; i++) {
-        randomText += codeletters.charAt(
-          Math.floor(Math.random() * codeletters.length)
-        );
-      }
-      return randomText;
-    };
-
-    animateRandomText();
-  };
+  }, [token, camerasMap]);
 
   const handleDeleteClick = (teacherId) => {
     setSelectedTeacherId(teacherId);
@@ -199,24 +147,24 @@ const TeachersList = () => {
 
   useEffect(() => {
     if (submitAttempted) {
-      if (status === "succeeded") {
+      if (teachersStatus === "succeeded") {
         handleCloseDialog();
         EnSn(translations.teacherDeleted, { variant: "success" });
         setSubmitAttempted(false);
-      } else if (status === "failed") {
+      } else if (teachersStatus === "failed") {
         EnSn(error, { variant: "error" });
         setSubmitAttempted(false);
       }
     }
-  }, [status, error, translations, submitAttempted]);
+  }, [teachersStatus, teachersError, translations, submitAttempted]);
 
-  if (status === "loading" || detectStatus === "loading") {
+  if (
+    camerasStatus !== "succeeded" ||
+    teachersStatus !== "succeeded" ||
+    detectStatus !== "succeeded"
+  ) {
     return <p>Loading...</p>;
   }
-
-  // if (error || detectError) {
-  //   return <p>Error loading students: {error || detectError}</p>;
-  // }
 
   return (
     <>
@@ -252,37 +200,20 @@ const TeachersList = () => {
         <tbody className={styles.tbody}>
           {teachers.length > 0 ? (
             teachers.map((teacher, index) => {
-              const cameraId =
-                teacherToCameraMap[teacher.id] || teacher.camera_id;
-              const roomName =
-                animatedRoomNames[teacher.id] ||
-                cameraToRoomMap.get(cameraId) ||
-                translations.adminUnkownRoom;
-              const isDetected = detectedTeachers.has(teacher.id);
-
-              const detection = detections.find(
-                (detection) => detection.user === teacher.id
-              );
-              const detectionInterval = detection
-                ? now - new Date(detection.time)
-                : null;
-              let formattedTime = "Not detected";
-              if (detectionInterval !== null) {
-                const totalMinutes = Math.floor(
-                  detectionInterval / (1000 * 60)
-                );
-                const minutes = totalMinutes % 60;
-                const hours = Math.floor(totalMinutes / 60);
-                if (totalMinutes > 1) {
-                  formattedTime = `${hours
-                    .toString()
-                    .padStart(2, "0")}:${minutes
-                    .toString()
-                    .padStart(2, "0")} oldin`;
-                } else {
-                  formattedTime = "online";
-                }
-              }
+              const detection = detectedUsers.has(teacher.id)
+                ? detectedUsers.get(teacher.id)
+                : { room: translations.adminUnkownRoom, time: null };
+              console.log(detection);
+              const formattedTime =
+                detection && detection.time
+                  ? `${detection.time
+                      .getHours()
+                      .toString()
+                      .padStart(2, "0")}:${detection.time
+                      .getMinutes()
+                      .toString()
+                      .padStart(2, "0")}`
+                  : translations.adminNotDetect;
 
               return (
                 <tr className={styles.tr} key={index}>
@@ -315,7 +246,7 @@ const TeachersList = () => {
                   </td>
                   <td className={styles.attendance}>
                     <span>
-                      {isDetected ? (
+                      {detection.room !== translations.adminUnkownRoom ? (
                         <img
                           src={buildingIcon}
                           alt="Building Icon"
@@ -331,16 +262,10 @@ const TeachersList = () => {
                     </span>
                   </td>
                   <td>
-                    <span
-                      style={{
-                        color: `${formattedTime === "online" ? "blue" : ""}`,
-                      }}
-                    >
-                      {formattedTime}
-                    </span>
+                    <span>{formattedTime}</span>
                   </td>
                   <td>
-                    <span>{roomName}</span>
+                    <span>{detection.room}</span>
                   </td>
                   <td className={styles.action}>
                     <button
